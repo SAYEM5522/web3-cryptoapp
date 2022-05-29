@@ -15,6 +15,7 @@
     "ethers": "^5.6.8",
     "next": "12.1.0",
     "raf": "^3.4.1",
+    "react-icons": "^4.3.1",
     "wagmi": "^0.4.3"
   },
   "devDependencies": {

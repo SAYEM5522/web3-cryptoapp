@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from '../Css/CryptoFeed/CryptoHeader.module.css'
+import {BiSearch} from "react-icons/bi"
 const CryptoHeader = () => {
   return (
     <div className={styles.CryptoHeader}>
@@ -10,8 +11,9 @@ const CryptoHeader = () => {
       height={45}
       objectFit="cover"
       />
-      <div>
+      <div style={{position:"relative"}}>
         <input type={'text'} className={styles.Input} placeholder="Search Tokens or Coins"/>
+        <BiSearch className={styles.Icon} size={32}/>
       </div>
     </div>
   )
