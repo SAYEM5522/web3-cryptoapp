@@ -1,8 +1,11 @@
 import React from 'react'
+import Home from '../Home/Home'
 
 const Analytics = () => {
   return (
-    <div>Analytics</div>
+    <div>
+      <Home/>
+    </div>
   )
 }
 

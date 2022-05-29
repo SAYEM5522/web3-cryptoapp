@@ -54,12 +54,17 @@ const Icon=[
 ]
 const Sidebar = () => {
       const router=useRouter();
-      console.log(router)
       const DifferentRoute=useCallback((name)=>{
         return(()=>{
-          router.push({
-            pathname:`/${name}/${name}`
-          })
+          if(name==="Home"){
+            router.push("/");
+          }
+          else{
+            router.push({
+              pathname:`/${name}/${name}`
+            })
+          }
+        
         })
       },[])
 

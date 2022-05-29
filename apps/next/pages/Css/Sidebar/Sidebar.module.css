@@ -6,6 +6,7 @@
   margin-left:15px;
   overflow-y: scroll;
   overflow-x: hidden;
+  margin-top: 15px;
 
 }
 .Sidebar::-webkit-scrollbar {
