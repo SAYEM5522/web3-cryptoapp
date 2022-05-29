@@ -4,4 +4,47 @@
   height: 95vh;
   border-radius: 20px;
   margin-left:15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+.Sidebar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.Sidebar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.Sidebar_Top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0px 20px;
+}
+.Sidebar_Top>p{
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.Sidebar_Item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 6px;
+  padding: 0px 20px;
+  cursor: pointer;
+}
+.Sidebar_Item>p{
+  color: white;
+  font-size: 17px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.Sidebar_Item:hover{
+  background-color: #3D4A5A;
+  border-radius: 25px;
+}
+.Sidebar_Item:hover>p{
+  color: red;
 }
