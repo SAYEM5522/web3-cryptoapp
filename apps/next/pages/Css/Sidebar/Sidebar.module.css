@@ -1,0 +1,7 @@
+.Sidebar{
+  flex: 0.18;
+  background-color:#262C3A ;
+  height: 95vh;
+  border-radius: 40px;
+  margin-left:15px;
+}

@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   webpack5: true,
+  images: {
+    domains: ["assets.coingecko.com"]
+        },
 }
 
 const { withExpo } = require('@expo/next-adapter')

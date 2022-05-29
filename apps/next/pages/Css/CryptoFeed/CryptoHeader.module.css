@@ -1,0 +1,22 @@
+.CryptoHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 0px 20px;
+}
+.Input{
+  width: 350px;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  background-color: #262C3A;
+  color: white;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.Input::placeholder{
+  color: white;
+}

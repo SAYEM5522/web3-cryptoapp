@@ -1,0 +1,14 @@
+.Home{
+  background-color: #1C1E2A;
+  height: 100vh;
+}
+.Home_container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Home_Right{
+  flex:0.20;
+  height: 97vh;
+  
+}

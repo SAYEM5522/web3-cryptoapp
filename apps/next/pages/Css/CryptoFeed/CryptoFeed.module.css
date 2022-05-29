@@ -1,0 +1,13 @@
+.CryptoFeed{
+  flex: 0.60;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.CryptoFeed::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.CryptoFeed::-webkit-scrollbar-thumb {
+  background: transparent;
+}

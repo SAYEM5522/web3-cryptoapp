@@ -2,6 +2,7 @@ import { Provider } from 'app/provider'
 import Head from 'next/head'
 import React from 'react'
 import type { SolitoAppProps } from 'solito'
+import './Css/styles.css'
 import 'raf/polyfill'
 import '@rainbow-me/rainbowkit/styles.css';
 import {
