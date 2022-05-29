@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useCallback } from 'react'
 import styles from "../Css/Sidebar/Sidebar.module.css"
 import {IoMdSwap} from "react-icons/io"
 import {FiActivity} from "react-icons/fi"
@@ -7,6 +7,7 @@ import {BiTrendingUp} from "react-icons/bi"
 import {FaBuffer} from "react-icons/fa"
 import {AiOutlineAppstore} from "react-icons/ai"
 import IconName from './IconName'
+import { useRouter } from 'next/router'
 // IoMdSwap->swap
 // AiOutlineAppstore->home
 // BiTrendingUp ->gainer
@@ -34,6 +35,7 @@ const Icon=[
   },
   {
     id:4,
+    name:"Nft",
     img:true,
     
   },
@@ -51,8 +53,15 @@ const Icon=[
   }
 ]
 const Sidebar = () => {
-
-  
+      const router=useRouter();
+      console.log(router)
+      const DifferentRoute=useCallback((name)=>{
+        return(()=>{
+          router.push({
+            pathname:`/${name}/${name}`
+          })
+        })
+      },[])
 
   return (
     <div className={styles.Sidebar}>
@@ -71,7 +80,7 @@ const Sidebar = () => {
           Icon.map((item,index)=>{
             if(item.img){
               return(
-                <div className={styles.Sidebar_Item}>
+                <div className={styles.Sidebar_Item} onClick={()=>router.push("/NFT/Nft")}>
                   <Image
                   src={'/../public/nft.png'}
                   width={35}
@@ -81,11 +90,10 @@ const Sidebar = () => {
                   <p>Nft</p>
                   </div>
               )
-
             }
             else{
               return(
-                <div className={styles.Sidebar_Item}>
+                <div className={styles.Sidebar_Item} onClick={DifferentRoute(item.name)}>
                   <IconName Icon={item.icon}/>
                   <p>{item.name}</p>
                 </div>
