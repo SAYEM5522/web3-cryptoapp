@@ -1,0 +1,73 @@
+.CryptoStats_Caption{
+
+  margin: 9px;
+  padding: 9px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 900;
+}
+.CryptoFeed_Stats{
+  height: 350px;
+  width: 97%;
+  margin-top: 10px;
+  border: 0.5px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.CryptoFeed_Select{
+  height:30px;
+  width:70px;
+  background-color:#262C3A;
+  margin-left:auto;
+  margin-right:30px;
+  margin-top:-25px;
+  border-radius:15px;
+  cursor: pointer;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+.CryptoFeed_Select>p{
+  color: white;
+  font-size: 16px;
+   display: flex;
+  margin-top: 15px;
+  position: absolute;
+  margin-left: 5px;
+
+}
+.States_Country{
+  height: 400px;
+  width: 230px;
+  background-color: white;
+  position: absolute;
+  right: 30px;
+  border-radius: 9px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.States_Country::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.States_Country::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.CryptoFeed_Select_Icon{
+  position: absolute;
+  right: 5px;
+}
+.States_Country_Name{
+  padding:10px 7px;
+  height: 30px;
+  width: 100%;
+  cursor: pointer;
+  
+}
+.States_Country_Name:hover{
+  background-color: whitesmoke;
+  
+}

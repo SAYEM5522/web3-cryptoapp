@@ -19,7 +19,7 @@ const Token = () => {
  },[])
  const t=token.slice(0,5)
   return (
-    <div style={{marginTop:"10px",marginLeft:"0px"}}>
+    <div style={{marginTop:"10px",marginLeft:"8px"}}>
       <p className={styles.Token_Caption}>Trending Coins</p>
       {
         
