@@ -1,4 +1,4 @@
-import { Provider } from 'app/provider'
+import { Provider } from 'react-redux'
 import Head from 'next/head'
 import React from 'react'
 import type { SolitoAppProps } from 'solito'
@@ -18,6 +18,7 @@ import {
 } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+import store from './app/store'
 const Api_Key='fCugtIrzg2cPNoeojBNavirutcLb3bt9'
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
+    <Provider store={store}>
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains} 
        theme={darkTheme({
@@ -59,6 +61,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
       <Component {...pageProps} />
       </RainbowKitProvider>
     </WagmiConfig>
+    </Provider>
     </>
   );
 }

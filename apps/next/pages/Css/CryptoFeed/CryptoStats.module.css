@@ -41,13 +41,14 @@
 }
 .States_Country{
   height: 400px;
-  width: 230px;
-  background-color: white;
+  width: 210px;
+  background-color: #262C3A;
   position: absolute;
   right: 30px;
   border-radius: 9px;
   overflow-y: scroll;
   overflow-x: hidden;
+  color: white;
 }
 .States_Country::-webkit-scrollbar {
   width: 0px;
@@ -61,13 +62,17 @@
   right: 5px;
 }
 .States_Country_Name{
-  padding:10px 7px;
   height: 30px;
   width: 100%;
   cursor: pointer;
+  margin-top: -5px;
+  padding-top: 10px;
+  padding-left: 10px;
   
 }
 .States_Country_Name:hover{
-  background-color: whitesmoke;
+  background-color: rgb(75, 66, 66);
+  border-radius: 5px;
+  width: 100%;
   
 }

@@ -2,7 +2,11 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import styles from '../Css/CryptoFeed/CryptoHeader.module.css'
 import {BiSearch} from "react-icons/bi"
+import { useSelector } from 'react-redux'
+import { selectCountryName, selectCurrentPrice } from '../features/Analytics'
 const CryptoHeader = () => {
+  const countryID=useSelector(selectCountryName)
+  const Current_Price=useSelector(selectCurrentPrice)
   const [search,setSearch]=useState('')
   return (
     <div className={styles.CryptoHeader}>
@@ -16,8 +20,10 @@ const CryptoHeader = () => {
       <div className={styles.CryptoHeader_Des}>
         <p className={styles.CryptoHeader_Title}>Bitcoin</p>
         <p className={styles.CryptoHeader_Title2}>
-          BDT 
-          <span className={styles.Price1}> 2,688,873</span>
+          {countryID.toUpperCase()} 
+          <span className={styles.Price1}>{
+            Current_Price
+          }</span>
           <sup className={styles.Price2}>.80</sup>  
           </p>
       </div>
