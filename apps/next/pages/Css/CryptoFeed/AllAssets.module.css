@@ -1,0 +1,25 @@
+.Assests_Des{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.Assests{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 20px;
+  width: 95%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Assests:hover{
+  background-color: #262C3A;
+  color: white;
+}
+.Assests_Des>p{
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}

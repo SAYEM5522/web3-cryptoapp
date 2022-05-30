@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import styles from '../Css/CryptoFeed/CryptoHeader.module.css'
 import {BiSearch} from "react-icons/bi"
 import { useSelector } from 'react-redux'
-import { selectCountryName, selectCurrentPrice } from '../features/Analytics'
+import { selectCountryName, selectCurrentPrice, selectTokenName } from '../features/Analytics'
 const CryptoHeader = () => {
   const countryID=useSelector(selectCountryName)
   const Current_Price=useSelector(selectCurrentPrice)
+  const TokenName="Bitcoin"
   const [search,setSearch]=useState('')
   return (
     <div className={styles.CryptoHeader}>
@@ -18,12 +19,10 @@ const CryptoHeader = () => {
       objectFit="cover"
       />
       <div className={styles.CryptoHeader_Des}>
-        <p className={styles.CryptoHeader_Title}>Bitcoin</p>
+        <p className={styles.CryptoHeader_Title}>{TokenName} Price</p>
         <p className={styles.CryptoHeader_Title2}>
           {countryID.toUpperCase()} 
-          <span className={styles.Price1}>{
-            Current_Price
-          }</span>
+          <span className={styles.Price1}>{ Current_Price}</span>
           <sup className={styles.Price2}>.80</sup>  
           </p>
       </div>

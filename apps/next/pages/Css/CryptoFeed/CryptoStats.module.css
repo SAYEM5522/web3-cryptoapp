@@ -7,7 +7,7 @@
   font-weight: 900;
 }
 .CryptoFeed_Stats{
-  height: 350px;
+  height: 330px;
   width: 97%;
   margin-top: 10px;
   border: 0.5px solid lightgray;
@@ -15,6 +15,7 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  flex-direction: column;
 }
 .CryptoFeed_Select{
   height:30px;
@@ -75,4 +76,16 @@
   border-radius: 5px;
   width: 100%;
   
+}
+.CryptoStats_Caption_Text{
+  color: white;
+  font-size: 1rem;
+  font-weight: 900;
+  margin-top: 9px;
+}
+.CryptoStats_Caption_Price{
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 900;
+  margin-top: -5px;
 }
