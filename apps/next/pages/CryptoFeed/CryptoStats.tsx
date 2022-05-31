@@ -34,7 +34,6 @@ const override = css`
   top:40%
 `;
 const analyticsData=useSelector(selectAnalytics)
-
   return (
     <>
     {
