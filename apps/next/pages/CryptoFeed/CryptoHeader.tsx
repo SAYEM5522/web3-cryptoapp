@@ -1,14 +1,23 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import styles from '../Css/CryptoFeed/CryptoHeader.module.css'
 import {BiSearch} from "react-icons/bi"
 import { useSelector } from 'react-redux'
-import { selectCountryName, selectCurrentPrice, selectTokenName } from '../features/Analytics'
+import { selectAnalytics, selectCountryName, selectCurrentPrice, selectTokenName } from '../features/Analytics'
+import SearchTerm from './SearchTerm'
 const CryptoHeader = () => {
   const countryID=useSelector(selectCountryName)
   const Current_Price=useSelector(selectCurrentPrice)
+  const analyticsData=useSelector(selectAnalytics)
   const TokenName="Bitcoin"
   const [search,setSearch]=useState('')
+  const [open,setOpen]=useState(false)
+  const onChange=useCallback((e)=>{
+    setSearch(e.target.value)
+  },[search])
+  const onClick=useCallback(()=>{
+    setOpen(!open)
+  },[open])
   return (
     <div className={styles.CryptoHeader}>
       <div className={styles.CryptoHeader_Details}>
@@ -28,9 +37,14 @@ const CryptoHeader = () => {
       </div>
       </div>
     
-      <div style={{position:"relative"}}>
-        <input type={'text'} className={styles.Input} placeholder="Search Tokens or Coins"/>
+      <div style={{position:"relative"}} onClick={onClick}>
+        <input type={'text'} className={styles.Input} placeholder="Search Tokens or Coins" onChange={onChange} />
         <BiSearch className={styles.Icon} size={32}/>
+        {
+          open?
+          <SearchTerm analyticsData={analyticsData} search={search} />
+          :null
+        }
       </div>
     </div>
   )

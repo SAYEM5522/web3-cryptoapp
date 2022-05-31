@@ -4,5 +4,9 @@ export default configureStore({
   reducer: {
     Analytics: AnalyticsReducer
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    immutableCheck: false,
+    serializableCheck: false,
+  })
   
 });

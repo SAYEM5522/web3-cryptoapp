@@ -8,7 +8,7 @@ const CryptoFeed = () => {
     <div className={styles.CryptoFeed}>
       <CryptoHeader/>
         <CryptoStats/>
-      <AllAssets/>
+        <AllAssets/>
       </div>
   )
 }

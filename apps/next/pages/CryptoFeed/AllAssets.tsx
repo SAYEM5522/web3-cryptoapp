@@ -1,15 +1,17 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectAnalytics } from '../features/Analytics'
 import styles from "../Css/CryptoFeed/AllAssets.module.css"
 const AllAssets = () => {
-const analyticsData=useSelector(selectAnalytics)
+
+const analytic=useSelector(selectAnalytics)
 
   return (
     <div>
-      {
-        analyticsData[0].map((item:any,index:number)=>{
+ 
+ {
+        analytic[0]?.map((item:any,index:number)=>{
           return(
             <div key={index} className={styles.Assests}>
               <Image
@@ -30,7 +32,7 @@ const analyticsData=useSelector(selectAnalytics)
           )
         })
       }
-    </div>
+        </div>
   )
 }
 

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectAnalytics, selectCountryName, setCountryName } from '../features/Analytics'
 const PriceSelect = () => {
   const PriceData = useSelector(selectAnalytics)
+  
   const countryID=useSelector(selectCountryName)
   const dispatch=useDispatch()
  const currentPrice= PriceData[0]?.map((item:any) => item.market_data.current_price)[0][countryID]

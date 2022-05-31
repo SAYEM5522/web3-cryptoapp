@@ -85,7 +85,7 @@ const Sidebar = () => {
           Icon.map((item,index)=>{
             if(item.img){
               return(
-                <div className={styles.Sidebar_Item} onClick={()=>router.push("/NFT/Nft")}>
+                <div key={index} className={styles.Sidebar_Item} onClick={()=>router.push("/NFT/Nft")}>
                   <Image
                   src={'/../public/nft.png'}
                   width={35}
@@ -98,7 +98,7 @@ const Sidebar = () => {
             }
             else{
               return(
-                <div className={styles.Sidebar_Item} onClick={DifferentRoute(item.name)}>
+                <div key={index} className={styles.Sidebar_Item} onClick={DifferentRoute(item.name)}>
                   <IconName Icon={item.icon}/>
                   <p>{item.name}</p>
                 </div>

@@ -3,7 +3,7 @@ import { IconType } from 'react-icons'
 import styles from "../Css/Sidebar/Sidebar.module.css"
 
 interface Props {
-  Icon: IconType
+  Icon: any
 }
 function IconName({Icon}:Props) {
   return (
