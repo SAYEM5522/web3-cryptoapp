@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from '../Css/CryptoFeed/SearchTerm.module.css'
-import { selectTokenIndex, setCountryName, setTokenIndex, setTokenName } from '../features/Analytics'
+import { selectCountryName, selectTokenIndex, setCountryName, setCurrentPrice, setTokenId, setTokenIndex, setTokenName } from '../features/Analytics'
 interface Props 
 {
   analyticsData?:any,
@@ -10,12 +10,12 @@ interface Props
 }
 const SearchTerm = ({analyticsData,search}:Props) => {
   const dispatch=useDispatch();
-  // const TokenIndex=useSelector(selectTokenIndex)
+  const countrycode=useSelector(selectCountryName)
   // console.log(TokenIndex)
   return (
     <div className={styles.SearchTerm}>
        {
-        analyticsData[0]?.filter((value:any)=>{
+        analyticsData?.filter((value:any)=>{
           if(search==="")
           {
             return value
@@ -28,11 +28,20 @@ const SearchTerm = ({analyticsData,search}:Props) => {
 
         }).map((item:any,index:number)=>{
           const Select=()=>{
-            analyticsData[0]?.map((list:any,index:number)=>{
+            analyticsData?.map((list:any,index:number)=>{
               list.name===item.name?dispatch(setTokenIndex(index)):null,
               dispatch(setTokenName({
                 TokenName:item.name,
-                Tokenimg:item.image.large
+                Tokenimg:item.image
+              })),
+              dispatch(
+                setCurrentPrice({
+                  current_price:item.current_price
+                })
+
+              )
+              dispatch(setTokenId({
+                id:item.id
               }))
             })
            
@@ -40,7 +49,7 @@ const SearchTerm = ({analyticsData,search}:Props) => {
           return(
             <div key={index} className={styles.SearchTerm_Item} onClick={Select} >
               <Image
-                 src={item.image.large}
+                 src={item.image}
                   width={35}
                   height={35}
                   alt={item.name}
@@ -52,6 +61,7 @@ const SearchTerm = ({analyticsData,search}:Props) => {
                  <div className={styles.SearchTerm_Des} >
                  <p >{item.name}</p>
                  <p style={{marginTop:"-10px"}}>{item.symbol.toUpperCase()}</p>
+                 <p style={{marginTop:"-10px"}}>{item.current_price}</p>
                  </div>
             </div>
           )

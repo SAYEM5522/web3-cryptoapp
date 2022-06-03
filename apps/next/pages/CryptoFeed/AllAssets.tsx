@@ -1,21 +1,37 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { selectAnalytics } from '../features/Analytics'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectAnalytics, selectAnalytics2, selectTokenId, setAnalytics2, setCurrentPrice } from '../features/Analytics'
 import styles from "../Css/CryptoFeed/AllAssets.module.css"
-const AllAssets = () => {
-
-const analytic=useSelector(selectAnalytics)
+interface Props {
+  data : any
+}
+const AllAssets = ({data}:Props) => {
+  const dispatch=useDispatch();
+  const t_id=useSelector(selectTokenId)
+  
+  useEffect(() => {
+      dispatch(setAnalytics2(data))
+      // dispatch(setCurrentPrice({
+      //   current_price:data.map((item:any)=>{
+      //   console.log(item.id===t_id?item.current_price:null)
+      //   }),
+      // }))
+      
+  }, [])
 
   return (
     <div>
- 
  {
-        analytic[0]?.map((item:any,index:number)=>{
+        data.map((item:any,index:number)=>{
+            // dispatch(setCurrentPrice({
+            //   current_price:t_id===item.id?item.current_price:null,
+            // }))
+         
           return(
             <div key={index} className={styles.Assests}>
               <Image
-                 src={item.image.large}
+                 src={item.image}
                   width={35}
                   height={35}
                   alt={item.name}
@@ -27,6 +43,7 @@ const analytic=useSelector(selectAnalytics)
                  <div className={styles.Assests_Des}>
                  <p>{item.name}</p>
                  <p style={{marginTop:"-10px"}}>{item.symbol.toUpperCase()}</p>
+                 <p style={{marginTop:"-10px"}}>{item.current_price}</p>
                  </div>
             </div>
           )

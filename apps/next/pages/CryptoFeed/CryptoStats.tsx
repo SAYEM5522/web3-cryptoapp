@@ -13,37 +13,36 @@ const CryptoStats = () => {
   const dispatch=useDispatch();
   const [loading,setLoading]=useState(true)
 
-const getData=async()=>{
-    await axios.get('https://api.coingecko.com/api/v3/coins')
-    .then(res=>{
-      dispatch(setAnalytics(res.data))
-      setLoading(false)
-    })
-    .catch(err=>console.log(err))
+// const getData=async()=>{
+//     await axios.get('https://api.coingecko.com/api/v3/coins')
+//     .then(res=>{
+//       dispatch(setAnalytics(res.data))
+//       setLoading(false)
+//     })
+//     .catch(err=>console.log(err))
    
-}
-useEffect(()=>{
-    getData(),
-    ()=>getData()
-},[])
-const override = css`
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  top:40%
-`;
+// }
+// useEffect(()=>{
+//     getData(),
+//     ()=>getData()
+// },[])
+// const override = css`
+//   display: flex;
+//   margin: 0 auto;
+//   align-items: center;
+//   justify-content: center;
+//   top:40%
+// `;
 const analyticsData=useSelector(selectAnalytics)
   return (
     <>
-    {
+    {/* {
       loading?
       <div style={{height:"350px",width:"97%"}}>
       <HashLoader color={"red"} css={override} loading={loading} size={105}  />
       </div>
-      :
+      : */}
       <>
-      <PriceSelect/>
       <div className={styles.CryptoFeed_Stats}>
         <p className={styles.CryptoStats_Caption} >Market stats</p>
         <div style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly"}}>
@@ -108,7 +107,7 @@ const analyticsData=useSelector(selectAnalytics)
           </div>
       </div>
       </>
-    }
+    {/* } */}
    
     </>
   )
