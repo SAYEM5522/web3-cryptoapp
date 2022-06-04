@@ -75,7 +75,6 @@ const SearchTerm = ({search}:Props) => {
                  <div className={styles.SearchTerm_Des} >
                  <p >{item.name}</p>
                  <p style={{marginTop:"-10px"}}>{item.symbol.toUpperCase()}</p>
-                 <p style={{marginTop:"-10px"}}>{item.current_price}</p>
                  </div>
             </div>
           )

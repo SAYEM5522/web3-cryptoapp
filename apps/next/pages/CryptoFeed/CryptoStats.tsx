@@ -9,11 +9,13 @@ import HashLoader from "react-spinners/HashLoader";
 import useColor from './useColor'
 
 const CryptoStats = () => {
-  const {color}=useColor(100);
+ 
   const dispatch=useDispatch();
   const [loading,setLoading]=useState(true)
-
-
+  const price_1h=useSelector(selectPriceChangePercentage1hInCurrency)
+  const price_24h=useSelector(selectPriceChangePercentage24hInCurrency)
+  const price_7d=useSelector(selectPriceChangePercentage7dInCurrency)
+  console.log(useColor(price_1h))
 const analyticsData=useSelector(selectAnalytics)
   return (
     <>
@@ -66,19 +68,19 @@ const analyticsData=useSelector(selectAnalytics)
             <h3 className={styles.CryptoStats_Caption_Text}>
             PRICE CHANGE(1H)
             </h3>
-            <p className={styles.CryptoStats_Caption_Price} style={{color:color}}>{useSelector(selectPriceChangePercentage1hInCurrency)}</p>
+            <p className={styles.CryptoStats_Caption_Price} style={{color:useColor(price_1h).color?"#00ff00":"#ff0000"}}>{price_1h}</p>
           </div>
           <div>
             <h3 className={styles.CryptoStats_Caption_Text}>
             PRICE CHANGE(24H)
             </h3>
-            <p className={styles.CryptoStats_Caption_Price} style={{color:color}}>{useSelector(selectPriceChangePercentage24hInCurrency)}</p>
+            <p className={styles.CryptoStats_Caption_Price} style={{color:useColor(price_24h).color?"#00ff00":"#ff0000"}}>{price_24h}</p>
           </div>
           <div>
             <h3 className={styles.CryptoStats_Caption_Text}>
             PRICE CHANGE(7D)
             </h3>
-            <p className={styles.CryptoStats_Caption_Price} style={{color:color}}>{useSelector(selectPriceChangePercentage7dInCurrency)}</p>
+            <p className={styles.CryptoStats_Caption_Price} style={{color:useColor(price_7d).color?"#00ff00":"#ff0000"}}>{price_7d}</p>
           </div>
           </div>
       </div>

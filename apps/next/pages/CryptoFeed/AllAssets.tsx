@@ -43,7 +43,6 @@ const AllAssets = ({data}:Props) => {
                  <div className={styles.Assests_Des}>
                  <p>{item.name}</p>
                  <p style={{marginTop:"-10px"}}>{item.symbol.toUpperCase()}</p>
-                 <p style={{marginTop:"-10px"}}>{item.current_price}</p>
                  </div>
             </div>
           )
