@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from '../Css/CryptoFeed/SearchTerm.module.css'
-import { selectAnalytics2, selectCountryName, selectTokenIndex, setCountryName, setCurrentPrice, setTokenId, setTokenIndex, setTokenName } from '../features/Analytics'
+import { selectAnalytics2, selectCountryName, selectTokenIndex, setCountryName, setCurrentPrice, setMarket, setTokenId, setTokenIndex, setTokenName } from '../features/Analytics'
 interface Props 
 {
   analyticsData?:any,
@@ -13,7 +13,7 @@ const SearchTerm = ({search}:Props) => {
   const countrycode=useSelector(selectCountryName)
   const analyticData2=useSelector(selectAnalytics2)
    const analyticsData= analyticData2[analyticData2.length-1]
-  // console.log(TokenIndex)
+  console.log(analyticsData)
   return (
     <div className={styles.SearchTerm}>
        {
@@ -36,14 +36,26 @@ const SearchTerm = ({search}:Props) => {
                 TokenName:item.name,
                 Tokenimg:item.image
               })),
-              // dispatch(
-              //   setCurrentPrice({
-              //     current_price:item.current_price
-              //   })
+              dispatch(
+                setCurrentPrice({
+                  current_price:item.current_price
+                })
 
-              // )
+              )
               dispatch(setTokenId({
                 id:item.id
+              }))
+              dispatch(setMarket({
+                market_cap:item.market_cap,
+                total_supply:item.total_supply,
+                circulating_supply:item.circulating_supply,
+                high:item.high_24h,
+                low:item.low_24h,
+                price_change_percentage_24h_in_currency:item.price_change_percentage_24h_in_currency,
+                price_change_percentage_1h_in_currency:item.price_change_percentage_1h_in_currency,
+                price_change_percentage_7d_in_currency:item.price_change_percentage_7d_in_currency,
+                market_cap_rank:item.market_cap_rank,
+
               }))
             })
            
