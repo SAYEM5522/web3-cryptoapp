@@ -1,0 +1,17 @@
+.CryptoGraph{
+  height: 400px;
+  width: "100%";
+  position: relative;
+}
+.CryptoGraph_Header{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: 20px;
+}
+.CryptoGraph_List>p{
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+
+}
