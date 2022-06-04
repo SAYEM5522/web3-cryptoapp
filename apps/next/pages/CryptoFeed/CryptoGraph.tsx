@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect,useState } from 'react'
 import axios from 'axios'
+import moment from 'moment';
 import {
   Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Legend,} from 'chart.js';
 import { Line } from 'react-chartjs-2';
@@ -48,6 +49,8 @@ const CryptoGraph = () => {
   const [Data,setData]=useState<any>([])
   const[selectDate,setSelectDate]=useState(0.4)
   const[currentIndex,setCurrentIndex]=useState(0)
+  var day = moment.unix(1318781876);
+  console.log(day.format("hA"))
   const getData=async()=>{
       await  axios.get(`https://api.coingecko.com/api/v3/coins/${Token}/market_chart?vs_currency=${moneyInitial}&days=${selectDate}`).then(res=>{
          setData(res.data.prices)
@@ -58,7 +61,35 @@ const CryptoGraph = () => {
       getData(),
       ()=>getData()
   },[Token,moneyInitial,selectDate])
-  const label=Data.map((item:any)=>item[0])
+  const label=Data.map((item:any,index:number)=>(
+    moment.unix(item[0]).format("hA")))
+
+
+const Labelformate=()=>{
+  if(
+    selectDate===0.4
+  ){
+    return Data.map((item:any,index:number)=>(
+      moment.unix(item[0]).format("h:mm a")))
+  }
+  else if (selectDate===1 || selectDate===7){
+    return Data.map((item:any,index:number)=>(
+      moment.unix(item[0]).format(" ddd, hA")))
+  }
+  else if(selectDate===30){
+    return Data.map((item:any,index:number)=>(
+      moment.unix(item[0]).format(" MMM Do, hA")))
+  }
+  else if (selectDate===365){
+    return Data.map((item:any,index:number)=>(
+      moment.unix(item[0]).format(" MMMM Do ")))
+  }
+}
+
+
+  console.log(
+    Labelformate()
+  )
   const value=Data.map((item:any)=>item[1])
 
  
@@ -74,13 +105,13 @@ const CryptoGraph = () => {
           
           ticks: {
               stepSize: 0.5,
-              maxTicksLimit:10
+              maxTicksLimit:8
           }
       }
   }
   };
   const item = {
-    labels: label,
+    labels: Labelformate(),
     datasets:[
       {
         label: '',
