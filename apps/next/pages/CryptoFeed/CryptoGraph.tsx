@@ -87,9 +87,9 @@ const Labelformate=()=>{
 }
 
 
-  console.log(
-    Labelformate()
-  )
+  // console.log(
+  //   Labelformate()
+  // )
   const value=Data.map((item:any)=>item[1])
 
  
@@ -111,7 +111,7 @@ const Labelformate=()=>{
   }
   };
   const item = {
-    labels: Labelformate(),
+    labels:Labelformate(),
     datasets:[
       {
         label: '',

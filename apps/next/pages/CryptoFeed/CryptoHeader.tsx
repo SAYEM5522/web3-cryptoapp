@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styles from '../Css/CryptoFeed/CryptoHeader.module.css'
 import {BiSearch} from "react-icons/bi"
 import { useSelector } from 'react-redux'
-import { selectAnalytics, selectAnalytics2, selectCountryName, selectCurrentPrice, selectTokenImg, selectTokenName } from '../features/Analytics'
+import { selectAnalytics, selectAnalytics2, selectCountryName, selectCurrentPrice, selectTokenImg, selectTokenIndex, selectTokenName } from '../features/Analytics'
 import SearchTerm from './SearchTerm'
 import PriceSelect from './PriceSelect'
 interface Props {
@@ -11,18 +11,18 @@ interface Props {
 }
 const CryptoHeader = ({data}:Props) => {
   const countryID=useSelector(selectCountryName)
-  const Current_Price=useSelector(selectCurrentPrice)
-  // const analyticsData=useSelector(selectAnalytics2)
   const TokenName=useSelector(selectTokenName)
   const TokenImg=useSelector(selectTokenImg)
   const [search,setSearch]=useState('')
   const [open,setOpen]=useState(false)
+  const TokenIndex=useSelector(selectTokenIndex)
   const onChange=useCallback((e)=>{
     setSearch(e.target.value)
   },[search])
   const onClick=useCallback(()=>{
     setOpen(!open)
   },[open])
+  useEffect(()=>{},[TokenIndex])
   return (
     <>
     <div className={styles.CryptoHeader}>
@@ -37,7 +37,7 @@ const CryptoHeader = ({data}:Props) => {
         <p className={styles.CryptoHeader_Title}>{TokenName} Price</p>
         <p className={styles.CryptoHeader_Title2}>
           {countryID.toUpperCase()} 
-          <span className={styles.Price1}>{Current_Price}</span>
+          <span className={styles.Price1}>{data?.map((list:any,index:number)=>(list.current_price))[TokenIndex]}</span>
           <sup className={styles.Price2}>.80</sup>  
           </p>
       </div>
@@ -48,7 +48,7 @@ const CryptoHeader = ({data}:Props) => {
         <BiSearch className={styles.Icon} size={32}/>
         {
           open?
-          <SearchTerm analyticsData={data} search={search} />
+          <SearchTerm  search={search} />
           :null
         }
       </div>

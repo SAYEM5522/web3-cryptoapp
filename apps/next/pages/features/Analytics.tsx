@@ -4,7 +4,7 @@ const initialState = {
   analytics: [] as any,
   analytics2: [] as any,
   CountryName: 'bdt',
-  Current_Price: '',
+  Current_Price:null,
   TokenName:"Bitcoin",
   TokenIndex:0,
   TokenImg:"https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579",
@@ -24,6 +24,7 @@ const Analytics = createSlice({
         },
     setCountryName: (state, action) => {
       state.CountryName = action.payload.name
+      // state.Current_Price=action.payload.current_price
     },
     setTokenIndex: (state, action) => {
       state.TokenIndex = action.payload

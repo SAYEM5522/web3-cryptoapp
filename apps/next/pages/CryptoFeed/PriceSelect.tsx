@@ -11,19 +11,18 @@ interface Props {
   data : any
 }
 const PriceSelect = ({data}:Props) => {
-  const PriceData = useSelector(selectAnalytics)
   const countryID=useSelector(selectCountryName)
   const dispatch=useDispatch()
   const TokenIndex=useSelector(selectTokenIndex)
-  const analyticData2=useSelector(selectAnalytics2)
   const TokenId=useSelector(selectTokenId)
+  console.log(TokenId)
   const [loading,setLoading]=useState(true)
   const [price,setPrice]=useState([])
- const CoinItem= analyticData2[analyticData2.length-1]
+//  const CoinItem= analyticData2[analyticData2.length-1]
 const getData=async()=>{
   await axios.get('https://api.coingecko.com/api/v3/coins')
   .then(res=>{
-    // dispatch(setAnalytics(res.data))
+
     setPrice(res.data)
     setLoading(false)
   })
@@ -34,8 +33,7 @@ useEffect(()=>{
   getData(),
   ()=>getData()
 },[])
-// console.log(Object?.keys(price.map((item:any) => item.market_data.current_price)[0]))
-//  const currentPrice= PriceData[0]?.map((item:any) => item.market_data.current_price)[0][countryID]
+
 const [open, setOpen] = useState(false)
   const onClick = useCallback(() => {
     setOpen(!open)
@@ -48,16 +46,8 @@ const [open, setOpen] = useState(false)
   justify-content: center;
   top:40%
 `;
-const PriceChange=()=>{
-  data?.map((item:any,index:number)=>{
-      data?.map((list:any,index:number)=>
-        (list.id===item.id)
-      )   
-})}
-console.log( CoinItem?.map((list:any,index:number)=>
-(TokenId===list.id)?list.current_price:null))
-  
-// const PriceId=Object?.keys(price.map((item:any) => item.market_data.current_price)[0]);
+
+console.log( data?.map((list:any,index:number)=>(list.current_price))[TokenIndex])
   return (
     <div style={{ position: "relative" }}>
      
@@ -78,26 +68,16 @@ console.log( CoinItem?.map((list:any,index:number)=>
         <>
           {
               Object?.keys(price.map((item:any) => item.market_data.current_price)[0]).map((item: any, index: number) => {
-                const Select=()=>{
-                  dispatch(setCountryName({
-                    name:item
-                  }))
-                  dispatch(setCurrentPrice(
-                    {
-                      current_price:
-                     
-                        CoinItem?.map((list:any,index:number)=>
-                          (TokenId===list.id)?list.current_price:null)
-                       
-                      // PriceData[0]?.map((item:any) => item.market_data.current_price)[TokenIndex][item]
-                  
-                })
-                  )
-                }
-
-                 
+              
                 return (
-                  <div key={index} onClick={Select}
+                  <div key={index} onClick={()=>{
+                    dispatch(setCountryName({
+                      name:item,
+                    }))
+                     dispatch(setCurrentPrice({
+                      current_price:data?.map((list:any,index:number)=>(list.current_price))[TokenIndex]
+                     }))
+                  }}
                     >
                     <p className={styles.States_Country_Name}>{item}</p>
                   </div>
@@ -115,18 +95,7 @@ console.log( CoinItem?.map((list:any,index:number)=>
           </div>
           : null
       }
-      {/* <div style={{height:"0.5px"}}>
-       {
-         data.map((item:any,index:number)=>{
-           dispatch(setCurrentPrice({
-            current_price:item.current_price
-           }))
-               return(
-                 <div key={index}/>
-               )
-         })
-       }
-      </div> */}
+
     </div>
   )
 }

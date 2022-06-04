@@ -36,12 +36,7 @@ const CryptoStats = () => {
 const analyticsData=useSelector(selectAnalytics)
   return (
     <>
-    {/* {
-      loading?
-      <div style={{height:"350px",width:"97%"}}>
-      <HashLoader color={"red"} css={override} loading={loading} size={105}  />
-      </div>
-      : */}
+  
       <>
       <div className={styles.CryptoFeed_Stats}>
         <p className={styles.CryptoStats_Caption} >Market stats</p>
@@ -107,7 +102,7 @@ const analyticsData=useSelector(selectAnalytics)
           </div>
       </div>
       </>
-    {/* } */}
+   
    
     </>
   )
