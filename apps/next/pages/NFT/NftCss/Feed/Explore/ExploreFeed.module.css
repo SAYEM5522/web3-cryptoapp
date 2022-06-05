@@ -1,13 +1,12 @@
-/* .NftFeed{
-  flex: 1;
+.ExploreFeed{
   overflow-y: scroll;
   overflow-x: hidden;
-
+  flex: 1;
 }
-.NftFeed::-webkit-scrollbar {
+.ExploreFeed::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
-.NftFeed::-webkit-scrollbar-thumb {
+.ExploreFeed::-webkit-scrollbar-thumb {
   background: transparent;
-} */
+}
