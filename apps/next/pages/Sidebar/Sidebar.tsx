@@ -96,7 +96,6 @@ const Sidebar = () => {
               dispatch(setSidebarIndex({
                 sidebarIndex:index
               }))
-              // return(()=>{
                 if(name==="Home"){
                   router.push("/");
                 }
@@ -106,25 +105,11 @@ const Sidebar = () => {
                   })
                 }
               
-              // })
             },[])
-
-            // if(item.img){
-            //   return(
-            //     <div key={index} className={styles.Sidebar_Item} onClick={()=>router.push("/NFT/Nft")}>
-            //       <Image
-            //       src={'/../public/nft.png'}
-            //       width={35}
-            //       height={35}
-            //       objectFit="fill"
-            //       />
-            //       <p>Nft</p>
-            //       </div>
-            //   )
-            // }
             
               return(
-                <div key={index} style={{"backgroundColor":(index===sidebarIndex)?"red":"#262C3A",
+                <div key={index} style={{
+                  "backgroundColor":(index===sidebarIndex)?"#60bd8a":"#262C3A","color":(index===sidebarIndex)?"black":"white",
                 "borderRadius":"25px","width":"140px"}} className={styles.Sidebar_Item} onClick={()=>DifferentRoute(item.name,index)}>
                   <IconName Icon={item.icon}/>
                   <p>{item.name}</p>

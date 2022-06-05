@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  tabIndex:0
+  tabIndex:0,
+  ExploreList:[] as any
 }
 
 const Nftfeatures = createSlice({
@@ -10,12 +11,17 @@ const Nftfeatures = createSlice({
   reducers: {
     setTabIndex:(state,action)=>{
       state.tabIndex=action.payload.tabIndex
+    },
+    setExploreList:(state,action)=>{
+      state.ExploreList.push(action.payload.ExploreList)
     }
   }
 });
 
 export const {
-  setTabIndex
+  setTabIndex,
+  setExploreList
 } = Nftfeatures.actions
 export const selecttabindex=(state:any)=>state.Nft.tabIndex
+export const selectExploreList=(state:any)=>state.Nft.ExploreList
 export default Nftfeatures.reducer

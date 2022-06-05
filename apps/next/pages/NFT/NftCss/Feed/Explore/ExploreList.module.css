@@ -4,9 +4,10 @@
   justify-content: space-between;
 }
 .ExploreList_Caption>h1{
-  font-size: 22px;
+  font-size: 24px;
   margin-left: 10px;
   color: white;
+  font-weight: 900;
 }
 .ExploreList_Caption_Right{
   display: flex;
@@ -23,7 +24,28 @@
   color: black;
   font-size: 20px;
   margin-right: 20px;
-  background-color: rgb(186, 186, 58);
+  background-color: #ccfecc;
   border-radius: 50%;
   padding: 5px;
+  cursor: pointer;
+}
+.ExploreList_Item_List{
+  display: flex;
+  flex-direction: row;  
+  align-items: center;
+  margin-left: 20px;
+}
+.ExploreList_Item{
+  margin-right: 20px;
+  cursor: pointer;
+}
+.ExploreList_Item_Info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
 }

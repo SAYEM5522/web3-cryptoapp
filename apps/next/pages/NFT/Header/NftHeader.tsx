@@ -50,7 +50,7 @@ const NftHeader = () => {
           },[])
           return(
             <div className={styles.NftHeader_Item} key={item.id} onClick={()=>DifferentRoute(item.name,index)} >
-              <p  style={{"backgroundColor":(tabIndex===index)?"blue":"#262C3A "}} >{item.title}</p>
+              <p  style={{"backgroundColor":(tabIndex===index)?"#83a37e":"#262C3A "}} >{item.title}</p>
             </div>
           )
         })

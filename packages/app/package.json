@@ -10,5 +10,9 @@
     "moti": "canary",
     "solito": "latest"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "devDependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "hardhat": "^2.9.6"
+  }
 }
