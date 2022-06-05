@@ -1,0 +1,13 @@
+.NftFeed{
+  flex: 0.82;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+.NftFeed::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.NftFeed::-webkit-scrollbar-thumb {
+  background: transparent;
+}
