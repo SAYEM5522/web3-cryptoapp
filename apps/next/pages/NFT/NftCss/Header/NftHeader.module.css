@@ -1,21 +1,33 @@
 .NftHeader{
-  background-color: #f5f5f5;
+  background-color: #262C3A ;
   padding: 10px;
   display: flex;
   flex-direction: row;
   margin-top: 15px;
   margin-left: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   width: 700px;
   position: sticky;
   top: 0;
-
   
 }
 .NftHeader_Item{
   flex: 1;
   display: flex;
   align-items: center;
-  margin : 0px 15px;
+  
   cursor: pointer;
+  color: white;
+  padding-left: 4px;
+  height: 24px;
 }
+.NftHeader_Item>p{
+  width: 125px;
+  /* background-color: red; */
+  padding : 5px 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 15px;
+}
+
