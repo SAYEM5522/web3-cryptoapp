@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from "../../NftCss/Feed/Stats/StatsList.module.css"
+import {BsArrowRight} from 'react-icons/bs'
 const StatsItem=[
   {
     id:1,
@@ -52,7 +53,30 @@ const StatsItem=[
   },
   {
     id:5,
+    name:'We Are All Going To Die',
+    image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
+    volume:400,
+    floor_price:0.01,
+    items:100,
+    token:'ETH',
+    token_logo:'',
+    catagory:'Crypto',
+    time:'1h',
+  },
+  {
+    id:6,
     name:'Great Goat',
+    image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
+    volume:400,
+    floor_price:0.01,
+    items:100,
+    token:'ETH',
+    token_logo:'',
+    catagory:'Crypto',
+    time:'1h',
+  }, {
+    id:7,
+    name:'We Are All Going To Die',
     image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
     volume:400,
     floor_price:0.01,
@@ -101,6 +125,9 @@ const StatsList = () => {
               </div>
               <div className={styles.stats_items}>
                 <p>{item.items}</p>
+              </div>
+              <div className={styles.stats_Icon} >
+              <BsArrowRight />
               </div>
             </div>
               )})
