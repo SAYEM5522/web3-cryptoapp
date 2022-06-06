@@ -1,0 +1,113 @@
+import Image from 'next/image'
+import React from 'react'
+import styles from "../../NftCss/Feed/Stats/StatsList.module.css"
+const StatsItem=[
+  {
+    id:1,
+    name:'Great Goat',
+    image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
+    volume:950,
+    floor_price:0.01,
+    items:100,
+    token:'ETH',
+    token_logo:'',
+    catagory:'Crypto',
+    time:'1h',
+  },
+  {
+    id:2,
+    name:'Great Goat',
+    image:'https://lh3.googleusercontent.com/20749ie-OQXjwxzOuvTyeUD8y8zc34PHhLyZUxWBY5UQKh15jGw8JwtpAtrppXhDmuRgPHabG9KxnpFV7UnMEFmtLC0pttrWGxNAFw=s120',
+    volume:870,
+    floor_price:0.01,
+    items:100,
+    token:'ETH',
+    token_logo:'',
+    catagory:'Crypto',
+    time:'1h',
+  },
+  {
+    id:3,
+    name:'We Are All Going To Die',
+    image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
+    volume:700,
+    floor_price:0.01,
+    items:100,
+    token:'ETH',
+    token_logo:'',
+    catagory:'Crypto',
+    time:'1h',
+  },
+  {
+    id:4,
+    name:'Great Goat',
+    image:'https://lh3.googleusercontent.com/3y3MythDHRH46bNeSGSwYo3pK8J_3ngKMUAwPyvl5cdKn9JiLSL46KWxZtEVo7V8ILraMEANA5RB-r_LrKmwq0qZebpa1pHqybJ7gQ=s120',
+    volume:650,
+    floor_price:0.01,
+    items:100,
+    token:'ETH',
+    token_logo:'',
+    catagory:'Crypto',
+    time:'1h',
+  },
+  {
+    id:5,
+    name:'Great Goat',
+    image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
+    volume:400,
+    floor_price:0.01,
+    items:100,
+    token:'ETH',
+    token_logo:'',
+    catagory:'Crypto',
+    time:'1h',
+  },
+  
+]
+const StatsList = () => {
+  return (
+    <div className={styles.Stats}>
+      <div className={styles.stats_Caption}>
+    <p className={styles.stats_caption_1}>#</p>
+    <p className={styles.stats_caption_2}>Collections</p>
+    <p className={styles.stats_caption_3}>Volume</p>
+    <p className={styles.stats_caption_4}>Floor Price</p>
+    <p className={styles.stats_caption_5}>Items</p>
+    </div>
+
+    <div className={styles.statsList}>
+      
+      {
+        StatsItem.map((item,index)=>{
+          return(
+            <div className={styles.statsItem}>
+              <p className={styles.stats_index}>{index+1}</p>
+              <div className={styles.statsItem_Des}>
+                <Image
+                 src={item.image}
+                 width={60}
+                  height={60}
+                  alt="nft"
+                  objectFit='cover'
+                  className='nft-Stats-image'
+                  />
+                  <h4>{item.name}</h4>
+              </div>
+              <div className={styles.stats_volume}>
+                <p>{item.volume} {item.token}</p>
+              </div>
+              <div className={styles.stats_price}>
+                <p>{item.floor_price}</p>
+              </div>
+              <div className={styles.stats_items}>
+                <p>{item.items}</p>
+              </div>
+            </div>
+              )})
+      }
+    </div>
+    </div>
+  )
+}
+
+export default StatsList

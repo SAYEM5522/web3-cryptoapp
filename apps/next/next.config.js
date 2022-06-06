@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   webpack5: true,
   images: {
-    domains: ["assets.coingecko.com","www.fivesquid.com","miro.medium.com","www.arweave.net","centaur-wp.s3.eu-central-1.amazonaws.com"]
+    domains: ["assets.coingecko.com","www.fivesquid.com","miro.medium.com","www.arweave.net",
+    "centaur-wp.s3.eu-central-1.amazonaws.com","lh3.googleusercontent.com","img.rarible.com"]
         },
 }
 

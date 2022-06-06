@@ -1,0 +1,14 @@
+.StatsFeed{
+  width: 100%;
+  height: 100%;
+  
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.StatsFeed::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.StatsFeed::-webkit-scrollbar-thumb {
+  background: transparent;
+}

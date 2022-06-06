@@ -8,3 +8,9 @@
 .Nft_Image{
   border-radius: 23px;
 }
+.nft-Stats-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
