@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import styles from "../../NftCss/Feed/Stats/StatsList.module.css"
 import {BsArrowRight} from 'react-icons/bs'
+import moment from 'moment'
 const StatsItem=[
   {
     id:1,
@@ -13,7 +14,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'1h',
+    time:'06-06-2022',
   },
   {
     id:2,
@@ -25,7 +26,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'1h',
+    time:'06-06-2022',
   },
   {
     id:3,
@@ -37,7 +38,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'1h',
+    time:'06-03-2022',
   },
   {
     id:4,
@@ -49,19 +50,19 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'1h',
+    time:'05-06-2022',
   },
   {
     id:5,
     name:'We Are All Going To Die',
     image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
     volume:400,
-    floor_price:0.01,
+    floor_price:4,
     items:100,
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'1h',
+    time:'06-06-2022',
   },
   {
     id:6,
@@ -73,24 +74,32 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'1h',
+    time:'05-20-2022',
   }, {
     id:7,
     name:'We Are All Going To Die',
     image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
-    volume:400,
-    floor_price:0.01,
-    items:100,
+    volume:1000,
+    floor_price:3,
+    items:1800,
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'1h',
+    time:'06-05-2022',
   },
   
 ]
-const StatsList = () => {
+interface SProps{
+  dateStats:any
+}
+const StatsList = ({dateStats}:SProps) => {
+ const SortedStats= StatsItem.sort((a, b) => b.volume - a.volume)
+ const date_range=moment().subtract(dateStats,'d').format('MM-DD-YYYY')
   return (
     <div className={styles.Stats}>
+      <div>
+       
+      </div>
       <div className={styles.stats_Caption}>
     <p className={styles.stats_caption_1}>#</p>
     <p className={styles.stats_caption_2}>Collections</p>
@@ -102,9 +111,12 @@ const StatsList = () => {
     <div className={styles.statsList}>
       
       {
-        StatsItem.map((item,index)=>{
-          return(
-            <div className={styles.statsItem}>
+        SortedStats.map((item,index)=>{
+          console.log(date_range)
+          {
+         if(moment(item.time).format("MM-DD-YYYY")>=date_range){
+            return(
+              <div className={styles.statsItem}>
               <p className={styles.stats_index}>{index+1}</p>
               <div className={styles.statsItem_Des}>
                 <Image
@@ -121,7 +133,7 @@ const StatsList = () => {
                 <p>{item.volume} {item.token}</p>
               </div>
               <div className={styles.stats_price}>
-                <p>{item.floor_price}</p>
+                <p>{item.floor_price} {item.token}</p>
               </div>
               <div className={styles.stats_items}>
                 <p>{item.items}</p>
@@ -130,7 +142,39 @@ const StatsList = () => {
               <BsArrowRight />
               </div>
             </div>
-              )})
+            )
+         }
+        }
+          // return(
+          //   <div className={styles.statsItem}>
+          //     <p className={styles.stats_index}>{index+1}</p>
+          //     <div className={styles.statsItem_Des}>
+          //       <Image
+          //        src={item.image}
+          //        width={60}
+          //         height={60}
+          //         alt="nft"
+          //         objectFit='cover'
+          //         className='nft-Stats-image'
+          //         />
+          //         <h4>{item.name}</h4>
+          //     </div>
+          //     <div className={styles.stats_volume}>
+          //       <p>{item.volume} {item.token}</p>
+          //     </div>
+          //     <div className={styles.stats_price}>
+          //       <p>{item.floor_price} {item.token}</p>
+          //     </div>
+          //     <div className={styles.stats_items}>
+          //       <p>{item.items}</p>
+          //     </div>
+          //     <div className={styles.stats_Icon} >
+          //     <BsArrowRight />
+          //     </div>
+          //   </div>
+          //     )
+        }
+          )
       }
     </div>
     </div>

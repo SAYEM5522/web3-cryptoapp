@@ -12,3 +12,25 @@
 .StatsFeed::-webkit-scrollbar-thumb {
   background: transparent;
 }
+.StatsHeader{
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    background-color: #262C3A;
+   
+
+}
+.StatsTimeText{
+  font-size: 14px;
+  color: white;
+  margin-left: 23px;
+  cursor: pointer;
+  width: 80px;
+  padding: 10px;
+  border-radius: 10px;
+}
