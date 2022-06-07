@@ -9,7 +9,7 @@ const ExploreId = () => {
   const router = useRouter()
   const { pid } = router.query
   const ExploreItem=useSelector(selectExploreList)
-  console.log(ExploreItem)
+  
   return (
     <div>
     <div style={{flexDirection:"row",display:"flex",backgroundColor:"#1C1E2A",height:"100vh"}}>

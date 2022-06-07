@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import styles from "../Css/Sidebar/Sidebar.module.css"
 import {IoMdSwap} from "react-icons/io"
 import {FiActivity} from "react-icons/fi"
@@ -58,6 +58,7 @@ const Icon=[
 const Sidebar = () => {
       const router=useRouter();
       const dispatch=useDispatch()
+      const [cureentIndex,setCurrentIndex]=useState(0);
       const sidebarIndex=useSelector(selectsidebarindex)
       // const DifferentRoute=useCallback((name,index)=>{
       //   dispatch(setSidebarIndex({
@@ -96,6 +97,7 @@ const Sidebar = () => {
               dispatch(setSidebarIndex({
                 sidebarIndex:index
               }))
+              // setCurrentIndex(index)
                 if(name==="Home"){
                   router.push("/");
                 }
@@ -105,7 +107,7 @@ const Sidebar = () => {
                   })
                 }
               
-            },[])
+            },[index])
             
               return(
                 <div key={index} style={{

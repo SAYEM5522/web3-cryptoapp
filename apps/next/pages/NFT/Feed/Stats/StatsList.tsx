@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useCallback } from 'react'
 import styles from "../../NftCss/Feed/Stats/StatsList.module.css"
 import {BsArrowRight} from 'react-icons/bs'
 import moment from 'moment'
+import { useRouter } from 'next/router'
 const StatsItem=[
   {
     id:1,
@@ -95,6 +96,8 @@ interface SProps{
 const StatsList = ({dateStats}:SProps) => {
  const SortedStats= StatsItem.sort((a, b) => b.volume - a.volume)
  const date_range=moment().subtract(dateStats,'d').format('MM-DD-YYYY')
+ const router=useRouter();
+
   return (
     <div className={styles.Stats}>
       <div>
@@ -112,11 +115,13 @@ const StatsList = ({dateStats}:SProps) => {
       
       {
         SortedStats.map((item,index)=>{
-          console.log(date_range)
+          const GoToProfile=useCallback(()=>{
+            router.push(`/NFT/Feed/UserNftProfile/${item.name}?pid=${item.id}`)
+           },[])
           {
          if(moment(item.time).format("MM-DD-YYYY")>=date_range){
             return(
-              <div className={styles.statsItem}>
+              <div className={styles.statsItem} onClick={GoToProfile} >
               <p className={styles.stats_index}>{index+1}</p>
               <div className={styles.statsItem_Des}>
                 <Image
