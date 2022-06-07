@@ -1,7 +1,12 @@
 .CryptoGraph{
   height: 400px;
-  width: "100%";
+  width: 784px;
   position: relative;
+  border: 1px solid #262C3A;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+  margin-top: 3px;
 }
 .CryptoGraph_Header{
   position: absolute;

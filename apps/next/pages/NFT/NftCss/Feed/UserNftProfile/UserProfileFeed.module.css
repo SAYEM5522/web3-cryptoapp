@@ -1,0 +1,9 @@
+.UserProfileFeed_Feed{
+  width: 100%;
+  height: 700vh;
+  background-color: #fff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: -80px;
+  z-index: 1000;
+}

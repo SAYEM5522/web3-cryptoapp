@@ -8,6 +8,10 @@ const NftsFeed = () => {
     <div style={{flex:0.82}} className={styles.NftFeed}>
       <NftHeader/>
       <NftCollection/>
+      <NftCollection/>
+      <NftCollection/>
+      <NftCollection/>
+
     </div>
   )
 }

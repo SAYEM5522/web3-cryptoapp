@@ -14,3 +14,16 @@
   border-radius: 18px;
   object-fit: cover;
 }
+.nft-feed_avatar{
+  width: 35px;
+  height: 35px;
+  border-radius: 23px;
+  
+}
+.UserProfileFeed_Header_Image{
+  width: 1200px;
+  height: 280px;
+ 
+  object-fit: cover;
+  z-index: -1000;
+}

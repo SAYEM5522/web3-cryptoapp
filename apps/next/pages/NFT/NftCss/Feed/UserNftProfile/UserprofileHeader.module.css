@@ -1,0 +1,38 @@
+.UserProfileHeader{
+height: 60px;
+width: "100%";
+/* background-color: aqua; */
+display: flex;
+align-items: center;
+flex-direction: row;
+justify-content: space-between;
+}
+.UserProfileHeader_Middle_Input{
+  width: 350px;
+  height: 40px;
+  border-radius: 10px;
+  border: 0.5px solid #8e8e8e;
+  background-color: #fff;
+  color: black;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.UserProfileHeader_Top{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.UserProfileHeader_Top>p{
+  color: black;
+  font-size: 22px;
+  margin-left: 10px;
+  font-weight: 900;
+}
+.UserProfileHeader_Bottom{
+  margin-right: 20px;
+}
