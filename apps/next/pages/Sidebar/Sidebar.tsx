@@ -87,7 +87,7 @@ const Sidebar = () => {
         height={38}
         objectFit="cover"
         />
-        <p>Ethbase</p>
+        <p>Ethscan</p>
       </div>
       <div>
         {

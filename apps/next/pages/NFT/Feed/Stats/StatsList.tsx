@@ -4,6 +4,8 @@ import styles from "../../NftCss/Feed/Stats/StatsList.module.css"
 import {BsArrowRight} from 'react-icons/bs'
 import moment from 'moment'
 import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
+import { setUserProfileName } from '../../../features/Nftfeatures'
 const StatsItem=[
   {
     id:1,
@@ -67,7 +69,7 @@ const StatsItem=[
   },
   {
     id:6,
-    name:'Great Goat',
+    name:'Great Goat #5654',
     image:'https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee',
     volume:400,
     floor_price:0.01,
@@ -97,6 +99,7 @@ const StatsList = ({dateStats}:SProps) => {
  const SortedStats= StatsItem.sort((a, b) => b.volume - a.volume)
  const date_range=moment().subtract(dateStats,'d').format('MM-DD-YYYY')
  const router=useRouter();
+ const dispatch=useDispatch();
 
   return (
     <div className={styles.Stats}>
@@ -116,6 +119,12 @@ const StatsList = ({dateStats}:SProps) => {
       {
         SortedStats.map((item,index)=>{
           const GoToProfile=useCallback(()=>{
+            dispatch(
+              setUserProfileName({
+                name:item.name,
+                img:item.image,
+              })
+            ),
             router.push(`/NFT/Feed/UserNftProfile/${item.name}?pid=${item.id}`)
            },[])
           {

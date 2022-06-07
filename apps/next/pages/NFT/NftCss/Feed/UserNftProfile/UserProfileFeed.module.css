@@ -4,6 +4,37 @@
   background-color: #fff;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  margin-top: -80px;
+  margin-top: -70px;
   z-index: 1000;
+}
+.UserProfileFeed_Feed_Img{
+  align-self: center;
+  position: absolute;
+  margin-top: -80px;
+  border: 5px solid #fff;
+  border-radius: 30px;
+}
+.UserProfileFeed_Feed_Name{
+  position: absolute;
+  font-size: 25px;
+  font-weight: 900;
+  color: #262C3A;
+  display: flex;
+  align-self: center;
+  margin-top: 90px;
+}
+.UserProfileFeed_Feed_Des{
+ display: flex;
+ justify-content: center;
+}
+.UserProfileFeed_Feed_Details{
+   width: 450px;
+   border: 1px solid lightgray;
+    border-radius: 10px;
+    display: grid;
+    height: 60px;
+    place-items: center;
+    margin-top: 70px;
+    margin-left: 450px;
+    
 }
