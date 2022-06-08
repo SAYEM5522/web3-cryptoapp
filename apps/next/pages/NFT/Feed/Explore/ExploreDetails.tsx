@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import React from 'react'
+import { useRouter } from 'next/router';
+import React, { useCallback } from 'react'
 import styles from "../../NftCss/Feed/Explore/ExploreList.module.css"
 interface Props {
   item:{
@@ -9,8 +10,12 @@ interface Props {
   }
 }
 const ExploreDetails = ({item}:Props) => {
+  const router=useRouter()
+  const onClick=useCallback(()=>{
+     router.push(`/NFT/Feed/NftDetails/${item.title}?pid=${item.id}`)
+  },[])
   return (
-    <div>
+    <div onClick={onClick}>
        <Image
               src={item.img}
               width={200}
