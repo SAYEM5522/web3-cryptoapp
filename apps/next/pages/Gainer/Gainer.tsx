@@ -1,8 +1,13 @@
 import React from 'react'
-
+import GainerFeed from './GainerFeed'
+import GainerHeader from './GainerHeader'
+import styles from "../Css/GainerCss/Gainer/Gainer.module.css"
 const Gainer = () => {
   return (
-    <div>Gainer</div>
+    <div className={styles.Gainer}>
+      <GainerHeader/>
+      <GainerFeed/>
+    </div>
   )
 }
 

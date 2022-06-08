@@ -8,7 +8,7 @@ const UserNftProfile = () => {
   const { pid } = router.query
   return (
     <div className={styles.UserNftProfile}>
-     <UserProfileHeader/>
+     <UserProfileHeader  placeHolders={"Search by collections, NFT or user"}/>
      <UserProfileFeed/>
     </div>
   )

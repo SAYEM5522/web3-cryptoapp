@@ -2,9 +2,15 @@ import Image from 'next/image'
 import React from 'react'
 import { WalletConnect } from '../../../WalletConnect/WalletConnect'
 import styles from "../../NftCss/Feed/UserNftProfile/UserprofileHeader.module.css"
-const UserProfileHeader = () => {
+interface Props {
+  placeHolders:string;
+  background?:string;
+  color?:string;
+  border?:string;
+}
+const UserProfileHeader = ({placeHolders,background,color,border}:Props) => {
   return (
-    <div  className={styles.UserProfileHeader}>
+    <div  className={styles.UserProfileHeader} >
       <div className={styles.UserProfileHeader_Top}>
       <Image  
         src={'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579'}
@@ -12,10 +18,10 @@ const UserProfileHeader = () => {
         height={38}
         objectFit="cover"
         />
-        <p>Ethscan</p>
+        <p style={{"color":color}}>Ethscan</p>
       </div>
       <div className={styles.UserProfileHeader_Middle}>
-      <input type={'text'} className={styles.UserProfileHeader_Middle_Input}  placeholder="Search by collections, NFT or user "  />
+      <input type={'text'} style={{"backgroundColor":background,"color":color,"border":border }}className={styles.UserProfileHeader_Middle_Input}  placeholder={placeHolders} />
       </div>
       <div className={styles.UserProfileHeader_Bottom}>
         <WalletConnect/>
