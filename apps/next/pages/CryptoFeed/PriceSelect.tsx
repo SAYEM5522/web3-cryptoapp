@@ -47,7 +47,6 @@ const [open, setOpen] = useState(false)
   top:40%
 `;
 
-console.log( data?.map((list:any,index:number)=>(list.current_price))[TokenIndex])
   return (
     <div style={{ position: "relative" }}>
      

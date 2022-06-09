@@ -5,19 +5,19 @@ const NftCollection = () => {
   return (
       <div className={styles.NftCollectionFeed}>
           <div className={styles.NftCollectionFeed_Top}>
-            <div className={styles.NftCollectionFeed_Top_Name}>
+            <div style={{"marginLeft":"12px"}}>
             <Image
                  src={"https://lh3.googleusercontent.com/20749ie-OQXjwxzOuvTyeUD8y8zc34PHhLyZUxWBY5UQKh15jGw8JwtpAtrppXhDmuRgPHabG9KxnpFV7UnMEFmtLC0pttrWGxNAFw=s120"}
-                 width={50}
-                  height={50}
+                 width={35}
+                  height={35}
                   alt="nft"
-                  objectFit='fill'
-                  className='nft-feed_avatar'
+                  objectFit='cover'
+                  className='Gainer_Image'
                   />
+                  </div>
             <div className={styles.NftCollectionFeed_Top_Des}>
               <h4>Creator</h4>
               <p>@ritual</p>
-            </div>
             </div>
           </div>
           <div className={styles.NftCollectionFeed_Middle}>

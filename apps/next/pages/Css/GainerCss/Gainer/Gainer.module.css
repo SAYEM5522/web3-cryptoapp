@@ -1,5 +1,15 @@
 .Gainer{
   flex: 1;
   background-color: #1C1E2A;
-  height: 101.5vh;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
+.Gainer::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.Gainer::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+

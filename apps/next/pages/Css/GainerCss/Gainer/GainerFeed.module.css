@@ -32,7 +32,6 @@
  
 }
 .CryptoGraph_Header{
-  /* position: absolute; */
   display: flex;
   flex-direction: row;
   margin-right: 20px;
@@ -41,5 +40,36 @@
   color: white;
   margin-left: 20px;
   cursor: pointer;
+  font-weight: 900;
+
+}
+.GainerFeed_List{
+  margin-top: 15px;
+}
+.GainerFeed_List_Item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 10px;
+
+}
+.GainerFeed_List_Left{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 10px;
+}
+.GainerFeed_List_Item_Name{
+  font-size: 17px;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 20px;
+
+}
+.GainerFeed_List_Item_Price_Change{
+  font-size: 17px;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 20px;
 
 }
