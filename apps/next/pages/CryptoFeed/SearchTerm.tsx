@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from '../Css/CryptoFeed/SearchTerm.module.css'
-import { selectAnalytics2, selectCountryName, selectTokenIndex, setCountryName, setCurrentPrice, setMarket, setTokenId, setTokenIndex, setTokenName } from '../features/Analytics'
+import { selectAnalytics2, selectCountryName, selectGainerIndex, selectTokenIndex, setCountryName, setCurrentPrice, setMarket, setTokenId, setTokenIndex, setTokenName } from '../features/Analytics'
 interface Props 
 {
   analyticsData?:any,
@@ -13,7 +13,9 @@ const SearchTerm = ({search}:Props) => {
   const countrycode=useSelector(selectCountryName)
   const analyticData2=useSelector(selectAnalytics2)
    const analyticsData= analyticData2[analyticData2.length-1]
-  console.log(analyticsData)
+   const GainerIndex=useSelector(selectGainerIndex)
+   console.log(GainerIndex)
+  
   return (
     <div className={styles.SearchTerm}>
        {
@@ -60,7 +62,13 @@ const SearchTerm = ({search}:Props) => {
             })
            
           }
+          {
+            if(index===GainerIndex){
+              Select()
+            }
+          }
           return(
+           
             <div key={index} className={styles.SearchTerm_Item} onClick={Select} >
               <Image
                  src={item.image}

@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import styles from '../Css/CryptoFeed/CryptoHeader.module.css'
 import {BiSearch} from "react-icons/bi"
 import { useSelector } from 'react-redux'
-import { selectAnalytics, selectAnalytics2, selectCountryName, selectCurrentPrice, selectTokenImg, selectTokenIndex, selectTokenName } from '../features/Analytics'
+import { selectAnalytics, selectAnalytics2, selectCountryName, selectCurrentPrice, selectGainerCall, selectTokenImg, selectTokenIndex, selectTokenName } from '../features/Analytics'
 import SearchTerm from './SearchTerm'
 import PriceSelect from './PriceSelect'
 interface Props {
@@ -47,7 +47,7 @@ const CryptoHeader = ({data}:Props) => {
         <input type={'text'} className={styles.Input}  onClick={onClick} placeholder="Search Tokens or Coins" onChange={onChange} />
         <BiSearch className={styles.Icon} size={32}/>
         {
-          open?
+          open ?
           <SearchTerm  search={search} />
           :null
         }

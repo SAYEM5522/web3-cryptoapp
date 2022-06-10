@@ -21,7 +21,7 @@ const AllAssets = ({data}:Props) => {
   }, [])
 
   return (
-    <div>
+    <div className={styles.All_Assests}>
  {
         data.map((item:any,index:number)=>{
             // dispatch(setCurrentPrice({
@@ -29,7 +29,7 @@ const AllAssets = ({data}:Props) => {
             // }))
          
           return(
-            <div key={index} className={styles.Assests}>
+            <div key={index} className={styles.Assests} >
               <Image
                  src={item.image}
                   width={35}

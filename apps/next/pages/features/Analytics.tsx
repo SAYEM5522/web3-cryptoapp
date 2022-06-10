@@ -18,6 +18,8 @@ const initialState = {
   price_change_percentage_1h_in_currency:null,
   price_change_percentage_24h_in_currency:null,
   price_change_percentage_7d_in_currency:null,
+  GainerIndex:0,
+  GainerCall:false,
 
 }
 
@@ -59,12 +61,21 @@ const Analytics = createSlice({
       state.price_change_percentage_1h_in_currency=action.payload.price_change_percentage_1h_in_currency,
       state.price_change_percentage_24h_in_currency=action.payload.price_change_percentage_24h_in_currency,
       state.price_change_percentage_7d_in_currency=action.payload.price_change_percentage_7d_in_currency
+    },
+    setGainerIndex:(state,action)=>{
+      state.GainerIndex=action.payload.index,
+      state.GainerCall=action.payload.call
     }
 
   }
 });
 
-export const {setAnalytics,setCountryName,setTokenIndex,setCurrentPrice,setTokenName,setAnalytics2,setTokenId,setMarket} = Analytics.actions
+export const {setAnalytics,
+  setCountryName,setTokenIndex,
+  setCurrentPrice,setTokenName,
+  setAnalytics2,setTokenId,
+  setMarket,setGainerIndex
+} = Analytics.actions
 export const selectAnalytics = (state:any) => state.Analytics.analytics
 export const selectAnalytics2 = (state:any) => state.Analytics.analytics2
 export const selectCountryName = (state:any) => state.Analytics.CountryName
@@ -82,4 +93,6 @@ export const selectMarketCapRank = (state:any) => state.Analytics.market_cap_ran
 export const selectPriceChangePercentage1hInCurrency = (state:any) => state.Analytics.price_change_percentage_1h_in_currency
 export const selectPriceChangePercentage24hInCurrency = (state:any) => state.Analytics.price_change_percentage_24h_in_currency
 export const selectPriceChangePercentage7dInCurrency = (state:any) => state.Analytics.price_change_percentage_7d_in_currency
+export const selectGainerIndex = (state:any) => state.Analytics.GainerIndex
+export const selectGainerCall = (state:any) => state.Analytics.GainerCall
 export default Analytics.reducer

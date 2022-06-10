@@ -6,8 +6,9 @@ import {AiOutlineGlobal} from 'react-icons/ai'
 import {BsArrowDownRight} from 'react-icons/bs'
 import {GiStarShuriken} from 'react-icons/gi'
 import PriceSelect from '../CryptoFeed/PriceSelect'
-import { useSelector } from 'react-redux'
-import { selectCountryName } from '../features/Analytics'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectCountryName, setGainerIndex } from '../features/Analytics'
+import { useRouter } from 'next/router'
 
 const GItem=[
   {
@@ -70,6 +71,8 @@ const GainerFeed = () => {
   const [currentIndex2,setCurrentIndex2]=React.useState(0)
   const [selectData,setSelectData]=React.useState("All Assets")
   const TokenCountry=useSelector(selectCountryName)
+  const router=useRouter()
+  const dispatch=useDispatch()
   const [selectTime,setSelectTime]=React.useState({
     type:"1H",
     limit:"price_change_percentage_1h_in_currency"
@@ -85,6 +88,7 @@ useEffect(()=>{
   getData(),
   ()=>getData()
 },[TokenCountry])
+
   return (
 
     <div className={styles.GainerFeed}>
@@ -140,10 +144,16 @@ useEffect(()=>{
         {
           
           data.map((value:any,index)=>{
- 
+            const onClickGo=()=>{
+              dispatch(setGainerIndex({
+                index:index,
+                call:true
+              }))
+              router.push("/Analytics/Analytics")
+         }
              if(selectData==="All Assets"){
             return(
-              <div className={styles.GainerFeed_List} key={index}>
+              <div className={styles.GainerFeed_List} key={index} onClick={onClickGo}>
                 <div className={styles.GainerFeed_List_Left}>
                  <div className={styles.GainerFeed_List_Item}>
                  <Image

@@ -78,7 +78,7 @@ const [open, setOpen] = useState(false)
                      }))
                   }}
                     >
-                    <p className={styles.States_Country_Name}>{item}</p>
+                    <p className={styles.States_Country_Name}>{item.toUpperCase()}</p>
                   </div>
                 )
               })
