@@ -8,7 +8,7 @@ import { css } from "@emotion/react";
 import { HashLoader } from 'react-spinners'
 import usePrice from './usePrice'
 interface Props {
-  data : any
+  data ?: any
 }
 const PriceSelect = ({data}:Props) => {
   const countryID=useSelector(selectCountryName)

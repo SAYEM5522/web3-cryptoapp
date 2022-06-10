@@ -5,6 +5,10 @@ import styles from "../Css/GainerCss/Gainer/GainerFeed.module.css"
 import {AiOutlineGlobal} from 'react-icons/ai'
 import {BsArrowDownRight} from 'react-icons/bs'
 import {GiStarShuriken} from 'react-icons/gi'
+import PriceSelect from '../CryptoFeed/PriceSelect'
+import { useSelector } from 'react-redux'
+import { selectCountryName } from '../features/Analytics'
+
 const GItem=[
   {
     id:1,
@@ -65,13 +69,14 @@ const GainerFeed = () => {
   const [currentIndex,setCurrentIndex]=React.useState(0)
   const [currentIndex2,setCurrentIndex2]=React.useState(0)
   const [selectData,setSelectData]=React.useState("All Assets")
+  const TokenCountry=useSelector(selectCountryName)
   const [selectTime,setSelectTime]=React.useState({
     type:"1H",
     limit:"price_change_percentage_1h_in_currency"
   })
  const [data,setData]=useState([])
   const getData=async()=>{
-  await  axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${'eth'}&order=market_cap_desc&per_page=50&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`).then(res=>{
+  await  axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${TokenCountry}&order=market_cap_desc&per_page=50&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`).then(res=>{
      setData(res.data)
     }).catch
     (err=>console.log(err))
@@ -79,8 +84,7 @@ const GainerFeed = () => {
 useEffect(()=>{
   getData(),
   ()=>getData()
-},[])
-console.log(data)
+},[TokenCountry])
   return (
 
     <div className={styles.GainerFeed}>
@@ -102,7 +106,7 @@ console.log(data)
             })
          }
       </div>
-      
+      <div className={styles.CryptoGraph_Header_Right} >
       <div className={styles.CryptoGraph_Header}>
       {
         dataSelect.map((value,index)=>{
@@ -121,8 +125,9 @@ console.log(data)
         })
       }
       </div>
-   
-
+      <div style={{"marginTop":"22px","marginLeft":"15px"}}><PriceSelect/></div>
+      
+      </div>
       </div>
       <div className={styles.stats_Caption}>
     <p className={styles.stats_caption_1}>Name</p>
