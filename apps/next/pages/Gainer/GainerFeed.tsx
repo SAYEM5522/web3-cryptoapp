@@ -2,20 +2,26 @@ import axios from 'axios'
 import Image from 'next/image'
 import React, { useCallback, useEffect, useState } from 'react'
 import styles from "../Css/GainerCss/Gainer/GainerFeed.module.css"
+import {AiOutlineGlobal} from 'react-icons/ai'
+import {BsArrowDownRight} from 'react-icons/bs'
+import {GiStarShuriken} from 'react-icons/gi'
 const GItem=[
   {
     id:1,
     name:"All Assets",
+    type:AiOutlineGlobal
 
   },
   {
     id:2,
     name:"Gainers",
+    type:GiStarShuriken
 
   },
   {
     id:3,
     name:"Losers",
+    type:BsArrowDownRight
 
   },
 ]
@@ -76,6 +82,7 @@ useEffect(()=>{
 },[])
 console.log(data)
   return (
+
     <div className={styles.GainerFeed}>
       <div className={styles.GainerHeader}>
       <div className={styles.GainerFeed_Top}>
@@ -88,12 +95,14 @@ console.log(data)
               },[])
               return(
                 <div className={styles.GainerFeed_Top_Des} style={{"backgroundColor":(currentIndex===index)?"#83a37e":"#1C1E2A"}} key={index} onClick={onClick}>
+                  <item.type className={styles.GainerFeed_Top_Des_Icon} size={30}/>
                   <p>{item.name}</p>
                   </div>
               )
             })
          }
       </div>
+      
       <div className={styles.CryptoGraph_Header}>
       {
         dataSelect.map((value,index)=>{
@@ -115,7 +124,14 @@ console.log(data)
    
 
       </div>
-      <div>
+      <div className={styles.stats_Caption}>
+    <p className={styles.stats_caption_1}>Name</p>
+    <p className={styles.stats_caption_2}>Symbol</p>
+    <p className={styles.stats_caption_3}>Price Change</p>
+    <p className={styles.stats_caption_4}>Market Capital</p>
+    <p className={styles.stats_caption_5}>Supply</p>
+    </div>
+      <div className={styles.GainerFeed_Details}>
         {
           
           data.map((value:any,index)=>{
@@ -135,21 +151,23 @@ console.log(data)
                   />
                   <p className={styles.GainerFeed_List_Item_Name} >{value.name}</p>
                   </div>
-                 
+                  <p className={styles.GainerFeed_List_Item_Symbol}>{value.symbol.toUpperCase()}</p>
                    {
-                     (selectTime.type==="1H")?<p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1h_in_currency?.toFixed(3)}</p>
-                     :(selectTime.type==="24H")?<p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_24h_in_currency?.toFixed(3)}</p>
+                     (selectTime.type==="1H")?<p style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} className={styles.GainerFeed_List_Item_Price_Change}>{value.price_change_percentage_1h_in_currency?.toFixed(3)}%</p>
+                     :(selectTime.type==="24H")?<p style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_24h_in_currency?.toFixed(3)}%</p>
                       :(selectTime.type==="7D")?
-                        <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_7d_in_currency?.toFixed(3)}</p>
+                        <p style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_7d_in_currency?.toFixed(3)}%</p>
                       :(selectTime.type==="1M")?
-                          <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_30d_in_currency?.toFixed(3)}</p>
+                          <p style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_30d_in_currency?.toFixed(3)}%</p>
                          
                       
                       :(selectTime.type==="1Y")?
-                          <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1y_in_currency?.toFixed(3)}</p>
+                          <p style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1y_in_currency?.toFixed(3)}%</p>
                      :null  
                   
                    }
+                    <p className={styles.GainerFeed_List_Item_Market}>{value.market_cap}</p>
+                    <p className={styles.GainerFeed_List_Item_Supply}>{value.total_supply}</p>
                   </div>
                 </div>
             )
@@ -170,20 +188,23 @@ console.log(data)
                     />
                     <p className={styles.GainerFeed_List_Item_Name} >{value.name}</p>
                     </div>
+                    <p className={styles.GainerFeed_List_Item_Symbol}>{value.symbol.toUpperCase()}</p>
                     {
-                     (selectTime.type==="1H")?<p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1h_in_currency?.toFixed(3)}</p>
-                     :(selectTime.type==="24H")?<p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_24h_in_currency?.toFixed(3)}</p>
+                     (selectTime.type==="1H")?<p className={styles.GainerFeed_List_Item_Price_Change} style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} >{value.price_change_percentage_1h_in_currency?.toFixed(3)}%</p>
+                     :(selectTime.type==="24H")?<p className={styles.GainerFeed_List_Item_Price_Change} style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} >{value.price_change_percentage_24h_in_currency?.toFixed(3)}%</p>
                       :(selectTime.type==="7D")?
-                        <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_7d_in_currency?.toFixed(3)}</p>
+                        <p className={styles.GainerFeed_List_Item_Price_Change} style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} >{value.price_change_percentage_7d_in_currency?.toFixed(3)}%</p>
                       :(selectTime.type==="1M")?
-                          <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_30d_in_currency?.toFixed(3)}</p>
+                          <p className={styles.GainerFeed_List_Item_Price_Change} style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} >{value.price_change_percentage_30d_in_currency?.toFixed(3)}%</p>
                          
                       
                       :(selectTime.type==="1Y")?
-                          <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1y_in_currency?.toFixed(3)}</p>
+                          <p className={styles.GainerFeed_List_Item_Price_Change} style={{"color":value[selectTime.limit]>0?"#00ff00":"#ff0000"}} >{value.price_change_percentage_1y_in_currency?.toFixed(3)}%</p>
                      :null  
                   
                    }
+                    <p className={styles.GainerFeed_List_Item_Symbol}>{value.market_cap}</p>
+                    <p className={styles.GainerFeed_List_Item_Symbol}>{value.total_supply}</p>
                     </div>
                   </div>
               )
@@ -205,20 +226,23 @@ console.log(data)
                     />
                     <p className={styles.GainerFeed_List_Item_Name} >{value.name}</p>
                     </div>
+                    <p className={styles.GainerFeed_List_Item_Symbol}>{value.symbol.toUpperCase()}</p>
                     {
-                     (selectTime.type==="1H")?<p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1h_in_currency?.toFixed(3)}</p>
-                     :(selectTime.type==="24H")?<p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_24h_in_currency?.toFixed(3)}</p>
+                     (selectTime.type==="1H")?<p style={{"color":value[selectTime.limit]<0?"#ff0000":"#00ff00"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1h_in_currency?.toFixed(3)}%</p>
+                     :(selectTime.type==="24H")?<p style={{"color":value[selectTime.limit]<0?"#ff0000":"#00ff00"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_24h_in_currency?.toFixed(3)}%</p>
                       :(selectTime.type==="7D")?
-                        <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_7d_in_currency?.toFixed(3)}</p>
+                        <p style={{"color":value[selectTime.limit]<0?"#ff0000":"#00ff00"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_7d_in_currency?.toFixed(3)}%</p>
                       :(selectTime.type==="1M")?
-                          <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_30d_in_currency?.toFixed(3)}</p>
+                          <p style={{"color":value[selectTime.limit]<0?"#ff0000":"#00ff00"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_30d_in_currency?.toFixed(3)}%</p>
                          
                       
                       :(selectTime.type==="1Y")?
-                          <p className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1y_in_currency?.toFixed(3)}</p>
+                          <p style={{"color":value[selectTime.limit]<0?"#ff0000":"#00ff00"}} className={styles.GainerFeed_List_Item_Price_Change} >{value.price_change_percentage_1y_in_currency?.toFixed(3)}%</p>
                      :null  
                   
                    }
+                    <p className={styles.GainerFeed_List_Item_Symbol}>{value.market_cap}</p>
+                    <p className={styles.GainerFeed_List_Item_Symbol}>{value.total_supply}</p>
                     </div>
                   </div>
               )
