@@ -279,16 +279,19 @@ console.log(pageNumber)
       <div>
 
       <ReactPaginate
-        breakLabel="..."
-        nextLabel="next >"
+        breakLabel="...."
+        nextLabel="Next >"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={269}
-        previousLabel="< previous"
+        previousLabel="< Previous"
         // renderOnZeroPageCount={null}
         className={styles.Pagination}
         marginPagesDisplayed={2}
-
+        activeClassName={styles.Pagination_Active}
+        pageClassName={styles.Pagination_Item}
+        previousLinkClassName={styles.Pagination_Item_Previous}
+        nextLinkClassName={styles.Pagination_Item_Next}
       />
 
       </div>
