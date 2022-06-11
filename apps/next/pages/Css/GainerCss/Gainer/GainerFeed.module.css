@@ -191,3 +191,18 @@
   flex-direction: row;
   align-items: center;
 }
+.Pagination{
+  
+  margin-left: auto;
+  margin-right: auto; 
+  width: 40%;
+  cursor: pointer;
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  margin-top: 15px;
+  align-items: center;
+}

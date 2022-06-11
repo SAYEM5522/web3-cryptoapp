@@ -9,7 +9,7 @@ import PriceSelect from '../CryptoFeed/PriceSelect'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectCountryName, setGainerIndex } from '../features/Analytics'
 import { useRouter } from 'next/router'
-
+import ReactPaginate from 'react-paginate';
 const GItem=[
   {
     id:1,
@@ -71,6 +71,7 @@ const GainerFeed = () => {
   const [currentIndex2,setCurrentIndex2]=React.useState(0)
   const [selectData,setSelectData]=React.useState("All Assets")
   const TokenCountry=useSelector(selectCountryName)
+  const [pageNumber,setPageNumber]=React.useState(1)
   const router=useRouter()
   const dispatch=useDispatch()
   const [selectTime,setSelectTime]=React.useState({
@@ -79,7 +80,7 @@ const GainerFeed = () => {
   })
  const [data,setData]=useState([])
   const getData=async()=>{
-  await  axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${TokenCountry}&order=market_cap_desc&per_page=50&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`).then(res=>{
+  await  axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${TokenCountry}&order=market_cap_desc&per_page=50&page=${pageNumber}&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`).then(res=>{
      setData(res.data)
     }).catch
     (err=>console.log(err))
@@ -87,7 +88,15 @@ const GainerFeed = () => {
 useEffect(()=>{
   getData(),
   ()=>getData()
-},[TokenCountry])
+},[TokenCountry,pageNumber])
+const handlePageClick = (event:any) => {
+  // const newOffset = (event.selected * itemsPerPage) % items.length;
+  // console.log(
+  //   `User requested page number ${event.selected}, which is offset ${newOffset}`
+  // );
+  setPageNumber(event.selected+1);
+};
+console.log(pageNumber)
 
   return (
 
@@ -266,6 +275,22 @@ useEffect(()=>{
         
         })
         }
+      </div>
+      <div>
+
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={269}
+        previousLabel="< previous"
+        // renderOnZeroPageCount={null}
+        className={styles.Pagination}
+        marginPagesDisplayed={2}
+
+      />
+
       </div>
     </div>
   )
