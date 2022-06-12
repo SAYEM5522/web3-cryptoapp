@@ -11,4 +11,17 @@
 .CryptoFeed::-webkit-scrollbar-thumb {
   background: transparent;
 }
+@media only screen and (max-width: 1000px) {
+  .CryptoFeed{
+    flex: 0.94;
+    
+  }
+ 
+}
+@media only screen and (min-width:600px) and (max-width:920px) {
+  .CryptoFeed{
+    flex: 0.93.5;
+  }
+
+}
 

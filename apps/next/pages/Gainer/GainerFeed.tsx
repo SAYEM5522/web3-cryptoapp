@@ -149,10 +149,6 @@ useEffect(()=>{
           
           data.map((value:any,index)=>{
             const onClickGo=()=>{
-              dispatch(setGainerIndex({
-                index:index,
-                
-              }))
 
               dispatch(setTokenIndex(index)),
 
@@ -226,7 +222,7 @@ useEffect(()=>{
           else if(selectData==="Gainers"){
             if(value[selectTime.limit]>0){
               return(
-                <div className={styles.GainerFeed_List} key={index}>
+                <div className={styles.GainerFeed_List} key={index} onClick={onClickGo}>
                   <div className={styles.GainerFeed_List_Left}>
                    <div className={styles.GainerFeed_List_Item}>
                    <Image
@@ -264,7 +260,7 @@ useEffect(()=>{
           else if(selectData==="Losers"){
             if(value[selectTime.limit]<0){
               return(
-                <div className={styles.GainerFeed_List} key={index}>
+                <div className={styles.GainerFeed_List} key={index} onClick={onClickGo}>
                   <div className={styles.GainerFeed_List_Left}>
                    <div className={styles.GainerFeed_List_Item}>
                    <Image
