@@ -50,7 +50,7 @@ const CryptoGraph = () => {
   const[selectDate,setSelectDate]=useState(0.4)
   const[currentIndex,setCurrentIndex]=useState(0)
   var day = moment.unix(1318781876);
-  console.log(day.format("hA"))
+ 
   const getData=async()=>{
       await  axios.get(`https://api.coingecko.com/api/v3/coins/${Token}/market_chart?vs_currency=${moneyInitial}&days=${selectDate}`).then(res=>{
          setData(res.data.prices)

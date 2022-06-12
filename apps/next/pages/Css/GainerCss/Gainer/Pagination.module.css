@@ -1,0 +1,38 @@
+.Pagination{
+  
+  margin-left: auto;
+  margin-right: auto; 
+  width: 600px;
+  cursor: pointer;
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  margin-top: 15px;
+  align-items: center;
+  border: 1px solid #262C3A;;
+  border-radius: 15px;
+}
+.Pagination_Active{
+  color: red;
+}
+.Pagination_Item{
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.Pagination_Item_Previous{
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.Pagination_Item_Next{
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}

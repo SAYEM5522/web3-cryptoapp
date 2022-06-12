@@ -7,9 +7,10 @@ import {BsArrowDownRight} from 'react-icons/bs'
 import {GiStarShuriken} from 'react-icons/gi'
 import PriceSelect from '../CryptoFeed/PriceSelect'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectCountryName, setGainerIndex } from '../features/Analytics'
+import { selectCountryName, selectGainerPageNumber, setCurrentPrice, setGainerIndex, setMarket, setTokenId, setTokenIndex, setTokenName } from '../features/Analytics'
 import { useRouter } from 'next/router'
 import ReactPaginate from 'react-paginate';
+import Pagination from './Pagination'
 const GItem=[
   {
     id:1,
@@ -71,7 +72,7 @@ const GainerFeed = () => {
   const [currentIndex2,setCurrentIndex2]=React.useState(0)
   const [selectData,setSelectData]=React.useState("All Assets")
   const TokenCountry=useSelector(selectCountryName)
-  const [pageNumber,setPageNumber]=React.useState(1)
+  const pageNumber=useSelector(selectGainerPageNumber)
   const router=useRouter()
   const dispatch=useDispatch()
   const [selectTime,setSelectTime]=React.useState({
@@ -89,14 +90,8 @@ useEffect(()=>{
   getData(),
   ()=>getData()
 },[TokenCountry,pageNumber])
-const handlePageClick = (event:any) => {
-  // const newOffset = (event.selected * itemsPerPage) % items.length;
-  // console.log(
-  //   `User requested page number ${event.selected}, which is offset ${newOffset}`
-  // );
-  setPageNumber(event.selected+1);
-};
-console.log(pageNumber)
+
+
 
   return (
 
@@ -156,8 +151,40 @@ console.log(pageNumber)
             const onClickGo=()=>{
               dispatch(setGainerIndex({
                 index:index,
-                call:true
+                
               }))
+
+              dispatch(setTokenIndex(index)),
+
+              dispatch(setTokenName({
+                TokenName:value.name,
+                Tokenimg:value.image
+              })),
+              dispatch(
+                setCurrentPrice({
+                  current_price:value.current_price
+                })
+
+              )
+              dispatch(setTokenId({
+                id:value.id
+              }))
+              dispatch(setMarket({
+                market_cap:value.market_cap,
+                total_supply:value.total_supply,
+                circulating_supply:value.circulating_supply,
+                high:value.high_24h,
+                low:value.low_24h,
+                price_change_percentage_24h_in_currency:value.price_change_percentage_24h_in_currency,
+                price_change_percentage_1h_in_currency:value.price_change_percentage_1h_in_currency,
+                price_change_percentage_7d_in_currency:value.price_change_percentage_7d_in_currency,
+                market_cap_rank:value.market_cap_rank,
+
+              }))
+
+
+
+
               router.push("/Analytics/Analytics")
          }
              if(selectData==="All Assets"){
@@ -277,23 +304,7 @@ console.log(pageNumber)
         }
       </div>
       <div>
-
-      <ReactPaginate
-        breakLabel="...."
-        nextLabel="Next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={269}
-        previousLabel="< Previous"
-        // renderOnZeroPageCount={null}
-        className={styles.Pagination}
-        marginPagesDisplayed={2}
-        activeClassName={styles.Pagination_Active}
-        pageClassName={styles.Pagination_Item}
-        previousLinkClassName={styles.Pagination_Item_Previous}
-        nextLinkClassName={styles.Pagination_Item_Next}
-      />
-
+    <Pagination/>
       </div>
     </div>
   )

@@ -14,7 +14,7 @@ const SearchTerm = ({search}:Props) => {
   const analyticData2=useSelector(selectAnalytics2)
    const analyticsData= analyticData2[analyticData2.length-1]
    const GainerIndex=useSelector(selectGainerIndex)
-   console.log(GainerIndex)
+   
   
   return (
     <div className={styles.SearchTerm}>
@@ -30,7 +30,7 @@ const SearchTerm = ({search}:Props) => {
           }
          
 
-        }).map((item:any,index:number)=>{
+        }).map((item:any,index:number)=>{ 
           const Select=()=>{
             analyticsData?.map((list:any,index:number)=>{
               list.name===item.name?dispatch(setTokenIndex(index)):null,
@@ -61,11 +61,6 @@ const SearchTerm = ({search}:Props) => {
               }))
             })
            
-          }
-          {
-            if(index===GainerIndex){
-              Select()
-            }
           }
           return(
            

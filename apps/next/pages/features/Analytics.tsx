@@ -20,6 +20,7 @@ const initialState = {
   price_change_percentage_7d_in_currency:null,
   GainerIndex:0,
   GainerCall:false,
+  GainerPageNumber:0,
 
 }
 
@@ -65,6 +66,9 @@ const Analytics = createSlice({
     setGainerIndex:(state,action)=>{
       state.GainerIndex=action.payload.index,
       state.GainerCall=action.payload.call
+    },
+    setGainerPageNumber:(state,action)=>{
+      state.GainerPageNumber=action.payload.pageNumber
     }
 
   }
@@ -74,7 +78,8 @@ export const {setAnalytics,
   setCountryName,setTokenIndex,
   setCurrentPrice,setTokenName,
   setAnalytics2,setTokenId,
-  setMarket,setGainerIndex
+  setMarket,setGainerIndex,
+  setGainerPageNumber
 } = Analytics.actions
 export const selectAnalytics = (state:any) => state.Analytics.analytics
 export const selectAnalytics2 = (state:any) => state.Analytics.analytics2
@@ -95,4 +100,5 @@ export const selectPriceChangePercentage24hInCurrency = (state:any) => state.Ana
 export const selectPriceChangePercentage7dInCurrency = (state:any) => state.Analytics.price_change_percentage_7d_in_currency
 export const selectGainerIndex = (state:any) => state.Analytics.GainerIndex
 export const selectGainerCall = (state:any) => state.Analytics.GainerCall
+export const selectGainerPageNumber = (state:any) => state.Analytics.GainerPageNumber
 export default Analytics.reducer
