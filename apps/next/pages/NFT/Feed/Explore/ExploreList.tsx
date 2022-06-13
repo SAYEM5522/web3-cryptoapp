@@ -19,7 +19,7 @@ const ExploreList = ({title,data}:IProps) => {
         ExploreList:data
        }))
   },[])
-  const nftSliceList=data.slice(0,5)
+  const nftSliceList=data.slice(0,4)
   return (
     <div>
       <div className={styles.ExploreList_Caption} >

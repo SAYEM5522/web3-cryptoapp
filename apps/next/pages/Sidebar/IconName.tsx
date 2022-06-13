@@ -10,7 +10,6 @@ function IconName({Icon}:Props) {
   const {width,height}=useWindowSize();
   return (
     <div className={styles.Icon}  
- 
     >
         <Icon size={30} color="white" />
     </div>
