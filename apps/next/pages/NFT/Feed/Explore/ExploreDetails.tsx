@@ -10,6 +10,8 @@ interface Props {
     profileName:string;
     ethLogo:string;
     bid:number;
+    time:string;
+    price:number;
 
   }
 }
@@ -27,12 +29,14 @@ const ExploreDetails = ({item}:Props) => {
               objectFit="cover"
               className='Nft_Image'
               />
-              <p className={styles.Explore_Details_Name}>{item.profileName}</p>
+              
               <div className={styles.ExploreList_Item_Info}>
                 {
                   item.title
                 }
               </div>
+              <div className={styles.Explore_Details_List}>
+                <div className={styles.Explore_Details_List_Item}>
               <div className={styles.Explore_Details_Bid}>
                 <div className={styles.Explore_Details_Bid_Img}>
                 <Image
@@ -60,8 +64,12 @@ const ExploreDetails = ({item}:Props) => {
                 </div>
                 <div className={styles.Explore_Details_Time_Des}>
                  <p className={styles.Explore_Details_time1} >Ends in</p>
-                 <p className={styles.Explore_Details_time2}>{item.bid} ETH</p>
+                 <p className={styles.Explore_Details_time2}>{item.time}</p>
                  </div>
+              </div>
+              </div>
+              <p className={styles.Explore_Details_Price}>Price {item.price}</p>
+
               </div>
     </div>
   )
