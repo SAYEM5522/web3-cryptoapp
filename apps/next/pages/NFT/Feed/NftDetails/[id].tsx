@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useCallback } from 'react'
 import GainerHeader from '../../../Gainer/GainerHeader'
 import styles from "../../NftCss/Feed/NftDetails/NftDetails.module.css"
 import {AiOutlineHeart} from 'react-icons/ai'
+import UserProfileHeader from '../UserNftProfile/UserProfileHeader'
 const NftCollection=[
   {
     id:1,
@@ -12,8 +13,10 @@ const NftCollection=[
     price:0.5,
     bid:0.5,
     time:"03:17:00",
-    profileName:"John Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    profileName:"Richard Doe",
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:1,
+    type:"Trending"
   },
   {
     id:2,
@@ -23,11 +26,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
-
-
-
-
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:2,
+    type:"Art"
   },
   {
     id:3,
@@ -37,7 +38,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:3,
+    type:"Music"
     
 
 
@@ -50,7 +53,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:4,
+    type:"Top"
 
 
 
@@ -63,7 +68,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:5,
+    type:"New"
 
 
 
@@ -76,7 +83,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:6,
+    type:"New"
 
 
   },
@@ -88,7 +97,9 @@ const NftCollection=[
     bid:0.8,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:5,
+    type:"Top"
 
 
   },
@@ -97,15 +108,17 @@ const NftCollection=[
 const NftDetails = () => {
   const router=useRouter()
   const id=router.query.id
+  const GoToProfile=useCallback(()=>{
+      router.push(`/NFT/Feed/UserNftProfile/${id}?pid=${id}`)
+  },[])
   return (
     <div>
+      <UserProfileHeader placeHolders={"Search Coins or Token"}  background="#fff" color="black" border={"1px solid lightgray"} inputBackground="#fff"/>
       {
         NftCollection.map(item=>{
           if(item.id==Number(id)){
             return(
-              <div>
-                <GainerHeader/>
-                <div className="row">
+                <div className={styles.Nft}>
                   <div className={styles.Nft_Details}>
                     <div className={styles.Nft_Details_Header}>
                       <Image src={item.ethLogo} width={34} height={34}/>
@@ -120,8 +133,12 @@ const NftDetails = () => {
               className='Nft_Details_Image'
               />
                   </div>
+                  <div>
+                    <p onClick={GoToProfile} className={styles.Nft_Details_Profile}>{item.profileName}</p>
+                    <p className={styles.Nft_Details_Title}>{item.title}</p>
+                  </div>
                 </div>
-              </div>
+             
         )
       }})}
     </div>

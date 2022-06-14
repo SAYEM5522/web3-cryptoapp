@@ -3,23 +3,25 @@ import { useRouter } from 'next/router';
 import React, { useCallback } from 'react'
 import styles from "../../NftCss/Feed/Explore/ExploreList.module.css"
 interface Props {
-  item:{
-    id:number,
-    img:string;
-    title:string;
-    profileName:string;
-    ethLogo:string;
-    bid:number;
-    time:string;
-    price:number;
+  item:any
+  // {
+    // id:number,
+    // img:string;
+    // title:string;
+    // profileName:string;
+    // ethLogo:string;
+    // bid:number;
+    // time:string;
+    // price:number;
 
-  }
+  // }
 }
 const ExploreDetails = ({item}:Props) => {
   const router=useRouter()
   const onClick=useCallback(()=>{
-     router.push(`/NFT/Feed/NftDetails/${item.id}?pid=${item.title}`)
+     router.push(`/NFT/Feed/NftDetails/${item.ProfileId}?pid=${item.title}`)
   },[])
+ 
   return (
     <div onClick={onClick} className={styles.Explore_Details} >
        <Image

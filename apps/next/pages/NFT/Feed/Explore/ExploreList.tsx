@@ -33,12 +33,18 @@ const ExploreList = ({title,data}:IProps) => {
       <div className={styles.ExploreList_Item_List}>
       {
 
-        nftSliceList.map((item:any,index:number)=>{
-          return(
-            <div className={styles.ExploreList_Item} key={index}>
-              <ExploreDetails item={item}   />
-            </div>
-            )})
+        data.map((item:any,index:number)=>{
+         
+          {
+            if(title===item.type){
+              return(
+                <div className={styles.ExploreList_Item} key={index}>
+                <ExploreDetails item={item}   />
+              </div>
+            )
+            }
+          }
+         })
       }
       </div>
     </div>

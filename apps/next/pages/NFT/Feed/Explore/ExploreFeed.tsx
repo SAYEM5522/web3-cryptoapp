@@ -2,6 +2,7 @@ import React from 'react'
 import NftHeader from '../../Header/NftHeader'
 import ExploreList from './ExploreList'
 import styles from "../../NftCss/Feed/Explore/ExploreFeed.module.css"
+import { NFTPROFILE } from '../../../Data'
 const NftItem=[
   {
     id:1,
@@ -38,8 +39,10 @@ const NftCollection=[
     price:0.5,
     bid:0.5,
     time:"03:17:00",
-    profileName:"John Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    profileName:"Richard Doe",
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:1,
+    type:"Trending"
   },
   {
     id:2,
@@ -49,7 +52,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:2,
+    type:"Art"
 
 
 
@@ -63,7 +68,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:3,
+    type:"Music"
     
 
 
@@ -76,7 +83,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:4,
+    type:"Top"
 
 
 
@@ -89,7 +98,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:5,
+    type:"New"
 
 
 
@@ -102,7 +113,9 @@ const NftCollection=[
     bid:0.5,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:6,
+    type:"New"
 
 
   },
@@ -114,7 +127,9 @@ const NftCollection=[
     bid:0.8,
     time:"03:17:00",
     profileName:"Richard Doe",
-    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png"
+    ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
+    ProfileId:5,
+    type:"Top"
 
 
   },

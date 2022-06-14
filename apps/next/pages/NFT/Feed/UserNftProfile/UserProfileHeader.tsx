@@ -1,9 +1,10 @@
 import Image from 'next/image'
+
 import React from 'react'
 import { WalletConnect } from '../../../WalletConnect/WalletConnect'
 import styles from "../../NftCss/Feed/UserNftProfile/UserprofileHeader.module.css"
 interface Props {
-  placeHolders:string;
+  placeHolders?:string;
   background?:string;
   color?:string;
   border?:string;
@@ -11,7 +12,7 @@ interface Props {
 }
 const UserProfileHeader = ({placeHolders,background,color,border,inputBackground}:Props) => {
   return (
-    <div  className={styles.UserProfileHeader} style={{"backgroundColor":background,"color":color,"border":border }} >
+    <div  className={styles.UserProfileHeader} style={{"backgroundColor":background,"color":color,"borderBottom":border }} >
       <div className={styles.UserProfileHeader_Top}>
       <Image  
         src={'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579'}

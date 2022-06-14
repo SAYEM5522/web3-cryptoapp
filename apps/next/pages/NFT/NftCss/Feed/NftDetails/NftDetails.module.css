@@ -12,8 +12,42 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: whitesmoke;
+  background-color: white;
   height: 30px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+}
+.Nft{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: white;
+
+}
+.Nft_Details_Profile{
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(32, 129, 226);
+    text-decoration: none;
+    font-family: Poppins, sans-serif;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.Nft_Details_Title{
+  font-size: 30px;
+  font-weight: 600;
+  max-width: 100%;
+  margin: 0px;
+  width: 588px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  color: rgb(53, 56, 64);
+  cursor: pointer;
 }

@@ -18,6 +18,8 @@ const StatsItem=[
     token_logo:'',
     catagory:'Crypto',
     time:'06-06-2022',
+    ProfileId:1,
+   
   },
   {
     id:2,
@@ -30,6 +32,7 @@ const StatsItem=[
     token_logo:'',
     catagory:'Crypto',
     time:'06-06-2022',
+    ProfileId:2,
   },
   {
     id:3,
@@ -42,6 +45,7 @@ const StatsItem=[
     token_logo:'',
     catagory:'Crypto',
     time:'06-03-2022',
+    ProfileId:3,
   },
   {
     id:4,
@@ -54,6 +58,7 @@ const StatsItem=[
     token_logo:'',
     catagory:'Crypto',
     time:'05-06-2022',
+    ProfileId:4,
   },
   {
     id:5,
@@ -66,6 +71,7 @@ const StatsItem=[
     token_logo:'',
     catagory:'Crypto',
     time:'06-08-2022',
+    ProfileId:5,
   },
   {
     id:6,
@@ -78,6 +84,7 @@ const StatsItem=[
     token_logo:'',
     catagory:'Crypto',
     time:'05-20-2022',
+    ProfileId:6,
   }, {
     id:7,
     name:'We Are All Going To Die',
@@ -89,6 +96,7 @@ const StatsItem=[
     token_logo:'',
     catagory:'Crypto',
     time:'06-05-2022',
+    ProfileId:7,
   },
   
 ]
@@ -125,7 +133,7 @@ const StatsList = ({dateStats}:SProps) => {
                 img:item.image,
               })
             ),
-            router.push(`/NFT/Feed/UserNftProfile/${item.name}?pid=${item.id}`)
+            router.push(`/NFT/Feed/UserNftProfile/${item.ProfileId}?pid=${item.ProfileId}`)
            },[])
           {
          if(moment(item.time).format("MM-DD-YYYY")>=date_range){
