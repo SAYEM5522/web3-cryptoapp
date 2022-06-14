@@ -1,0 +1,19 @@
+.Nft_Details{
+  width: 460px;
+  height: 550px;
+  background-color: #fff;
+  margin: 15px 20px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+.Nft_Details_Header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: whitesmoke;
+  height: 30px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}

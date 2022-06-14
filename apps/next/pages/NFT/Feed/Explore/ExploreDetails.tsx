@@ -18,7 +18,7 @@ interface Props {
 const ExploreDetails = ({item}:Props) => {
   const router=useRouter()
   const onClick=useCallback(()=>{
-     router.push(`/NFT/Feed/NftDetails/${item.title}?pid=${item.id}`)
+     router.push(`/NFT/Feed/NftDetails/${item.id}?pid=${item.title}`)
   },[])
   return (
     <div onClick={onClick} className={styles.Explore_Details} >
