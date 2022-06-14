@@ -5,10 +5,10 @@ import { selectuserProfileImg, selectuserProfileName } from '../../../features/N
 import styles from "../../NftCss/Feed/UserNftProfile/UserProfileFeed.module.css"
 import { NFTPROFILE } from '../../../Data'
 import { useRouter } from 'next/router'
-
+import { NftCollection } from '../../../Data'
+import ExploreDetails from '../Explore/ExploreDetails'
 const UserProfileFeed = () => {
-  const userName=useSelector(selectuserProfileName)
-  const imgUrl=useSelector(selectuserProfileImg)
+
   const router=useRouter()
   const id=router.query.id
   return (
@@ -62,6 +62,23 @@ const UserProfileFeed = () => {
             <p>$2.7K</p>
           </div>
         </div>
+        <div>
+          <p className={styles.UserProfileFeed_Des}>A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. What's more, each Moonbird unlocks private club membership and additional benefits the longer you hold them. We call it nesting – because, obviously.</p>
+        </div>
+        <div className={styles.UserProfileFeed_Feed_Item}>
+          {
+                  NftCollection.map((value:any,index:number)=>{
+                    if(value.ProfileId===Number(id)){
+                      return(
+                        <div key={index}  className={styles.UserProfileFeed_Feed_Item_Des}>
+                          <ExploreDetails item={value}/>
+                         </div>
+                      )
+                    }
+                  })
+          }
+        </div>
+
         
       </div> 
       </div>

@@ -1,12 +1,13 @@
 .UserProfileFeed_Feed{
   width: 100%;
-  height: 700vh;
+  height: 100%;
   background-color: #fff;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  margin-top: -70px;
+  margin-top: -55px;
   z-index: 1000;
 }
+
 .UserProfileFeed_Feed_Img{
   align-self: center;
   position: absolute;
@@ -88,6 +89,35 @@
   font-weight: 900;
   color: #262C3A;
   margin-top: -20px;
+}
+.UserProfileFeed_Des{
+  font-size: 15px;
+  font-weight: 900;
+  color: #262C3A;
+  margin-top: -20px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  color: rgba(22, 22, 26, 0.6);
+  margin-top: 22px;
+}
+.UserProfileFeed_Feed_Item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px;
+  margin-top: 50px;
+  border: lightgray 1px solid;
+  padding-top: 15px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  cursor: pointer;
+ 
+}
+.UserProfileFeed_Feed_Item_Des{
+  margin-right: 20px;
 }
 
 

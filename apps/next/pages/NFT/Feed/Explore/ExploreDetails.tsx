@@ -26,7 +26,7 @@ const ExploreDetails = ({item}:Props) => {
     <div onClick={onClick} className={styles.Explore_Details} >
        <Image
               src={item.img}
-              width={200}
+              width={210}
               height={260}
               objectFit="cover"
               className='Nft_Image'
@@ -71,7 +71,7 @@ const ExploreDetails = ({item}:Props) => {
               </div>
               </div>
               <p className={styles.Explore_Details_Price}>Price {item.price}</p>
-
+             
               </div>
     </div>
   )

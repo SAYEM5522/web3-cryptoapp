@@ -56,7 +56,10 @@
   margin-top: -2px;
 }
 .Explore_Details{
-  width: 210px;
+  /* width: 210px; */
+  /* border: 1px solid #262C3A; */
+  padding: 10px;
+  border-radius: 10px;
   
 }
 .Explore_Details_Price{
