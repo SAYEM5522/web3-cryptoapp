@@ -1,0 +1,86 @@
+.ProfileFeed{
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  margin: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+
+
+}
+.ProfileFeed__List{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  margin-top: 10px;
+
+}
+.Profile{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.Profile_Type_Select{
+  height:30px;
+  width:120px;
+  background-color:#262C3A;
+  margin-right:auto;
+  margin-left:30px;
+  margin-top:5px;
+  border-radius:15px;
+  cursor: pointer;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+.Profile_Type_Select>p{
+  color: white;
+  font-size: 16px;
+   display: flex;
+  margin-top: 15px;
+  position: absolute;
+  margin-left: 5px;
+
+}
+.Profile_Type_Icon{
+  position: absolute;
+  right: 5px;
+}
+
+.TypeSelectList{
+  height: 400px;
+  width: 210px;
+  background-color: #38435f;
+  position: absolute;
+  left:  30px;
+  border-radius: 9px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: white;
+  /* z-index: 1000; */
+  margin-top: 3px;
+}
+.TypeSelectList::-webkit-scrollbar {
+  width: 1px;
+  background: transparent;
+}
+.TypeSelectList::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.TypeSelectList_Item{
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: -5px;
+  color: white;
+  display: flex;
+  align-self: center;
+  font-size: 18px;
+  font-weight: 900;
+  margin-left:60px ;
+}

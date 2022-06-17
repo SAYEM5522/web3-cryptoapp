@@ -9,7 +9,9 @@ export const NFTPROFILE=[
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
     ProfileTime:"06-06-2022",
-   
+    ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
+    ProfileDes:"",
+    ProfileType:"Trending"
   },
   {
     ProfileId:2,
@@ -21,6 +23,9 @@ export const NFTPROFILE=[
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
     ProfileTime:"06-06-2022",
+    ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
+    ProfileDes:"",
+    ProfileType:"Trending"
 
   },
   {
@@ -33,6 +38,9 @@ export const NFTPROFILE=[
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
     ProfileTime:"06-06-2022",
+    ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
+    ProfileDes:"",
+    ProfileType:"Trending"
 
   },
   {
@@ -45,6 +53,9 @@ export const NFTPROFILE=[
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
     ProfileTime:"06-06-2022",
+    ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
+    ProfileDes:"",
+    ProfileType:"Trending"
 
   },
   {
@@ -57,6 +68,9 @@ export const NFTPROFILE=[
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
     ProfileTime:"06-06-2022",
+    ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
+    ProfileDes:"",
+    ProfileType:"Top"
 
   },
   {
@@ -69,6 +83,9 @@ export const NFTPROFILE=[
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
     ProfileTime:"06-06-2022",
+    ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
+    ProfileDes:"",
+    ProfileType:"Sports"
 
   },
   {
@@ -81,6 +98,9 @@ export const NFTPROFILE=[
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
     ProfileTime:"06-06-2022",
+    ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
+    ProfileDes:"",
+    ProfileType:"News"
 
   },
   {
@@ -93,6 +113,9 @@ export const NFTPROFILE=[
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
     ProfileTime:"06-06-2022",
+    ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
+    ProfileDes:"",
+    ProfileType:"Top"
 
   },
 
