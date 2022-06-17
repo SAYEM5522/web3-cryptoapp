@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react'
 import { NFTPROFILE } from '../../../Data'
 import styles from "../../NftCss/Feed/Profile/Profile.module.css"
 import { IoIosArrowDown } from 'react-icons/io'
+import Image from 'next/image'
 const TypeSelect=[
   {
     id:1,
@@ -79,6 +80,26 @@ const ProfileList = () => {
           if(TypeSelecting===item.ProfileType){
             return(
               <div className={styles.ProfileFeed} key={index} onClick={GotoProfile}>
+               <div className={styles.Profile_Cover} >
+               <Image
+              src={item.ProfileCoverPhoto}
+              width={310}
+              height={200}
+              objectFit="cover"
+              className='Nft_Profile_Image'
+              />
+               </div>
+               <div className={styles.Profile_Avatar}>
+               <Image src={item.ProfileImage}
+              width={50}
+              height={50}
+              objectFit="cover"
+              className='NFT_AVATAR'
+              />
+              </div>
+              <p className={styles.ProfileName}>{item.ProfileName}</p>
+              <p className={styles.ProfileDes}>{item.ProfileDes}</p>
+
                
               </div>
             )

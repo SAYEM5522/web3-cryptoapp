@@ -9,7 +9,7 @@
   width: 700px;
   position: sticky;
   top: 10px;
-  z-index: 100;
+  z-index: 1000;
   
 }
 .NftHeader_Item{
