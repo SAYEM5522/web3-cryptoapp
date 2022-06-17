@@ -19,11 +19,14 @@ const ExploreId = () => {
       <div className={styles.Explore_Item_Details}>
       {
         ExploreItem[ExploreItem.length-1].map((item:any,index:any)=>{
-          return(
-            <div key={index} className={styles.Explore_Item_Lists}>
-              <ExploreDetails item={item} />
-              </div>
-          )
+          if(pid===item.type){
+            return(
+              <div key={index} className={styles.Explore_Item_Lists}>
+                <ExploreDetails item={item} />
+                </div>
+            )
+          }
+         
         })
       }
       </div>

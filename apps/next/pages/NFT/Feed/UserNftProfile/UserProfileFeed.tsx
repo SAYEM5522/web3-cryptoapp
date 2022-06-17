@@ -47,7 +47,7 @@ const UserProfileFeed = () => {
         <div className={styles.UserProfileFeed_Feed_Details}>
           <div className={styles.UserProfileFeed_Feed_Details_1}>
             <h5>Floor price</h5>
-            <p>$2.7K</p>
+            <p>{item.ProfileFloorPrice}</p>
           </div>
           <div className={styles.UserProfileFeed_Feed_Details_2}>
             <h5>Market Cap</h5>
@@ -55,11 +55,11 @@ const UserProfileFeed = () => {
           </div>
           <div className={styles.UserProfileFeed_Feed_Details_3}>
             <h5>Items</h5>
-            <p>$2.7K</p>
+            <p>{item.ProfileItems}</p>
           </div>
           <div className={styles.UserProfileFeed_Feed_Details_4}>
             <h5>Total Volume</h5>
-            <p>$2.7K</p>
+            <p>{item.ProfileVolume}</p>
           </div>
         </div>
         <div>
