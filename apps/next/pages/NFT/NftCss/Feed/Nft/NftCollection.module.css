@@ -2,9 +2,9 @@
   width: 50%;
   margin-left: auto;
   margin-right: 100px;
-  background-color: red;
+  background-color: #fff;
   border-radius: 20px;
-  height: 650px;
+  height: 620px;
   margin-top: 20px;
   margin-bottom: 30px;
 }
@@ -45,4 +45,38 @@
   font-size: 14px;
   color: #8e8e8e;
   margin-top: -20px;
+}
+.NftCollectionFeed_Top_Dots{
+  margin-right: 10px;
+  cursor: pointer;
+}
+.NftCollectionFeed_Bottoms{
+  padding: 10px;
+}
+.NftCollectionFeed_Bottoms_Title{
+  font-family: "SpaceGrotesk Bold";
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.5px;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+}
+.NftCollectionFeed_Bottoms_Like{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+}
+.NftCollectionFeed_Bottoms_Like_Count{
+  font-size: 19px;
+  font-weight: 600;
+  color: black;
+  margin-left: 7px;
+}
+.NftCollectionFeed_Bottoms_Logo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

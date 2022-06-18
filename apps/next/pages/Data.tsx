@@ -127,7 +127,7 @@ export const NFTPROFILE=[
  export const NftCollection=[
   {
     id:1,
-    img:"https://www.fivesquid.com/pics/t2/1637855541-187495-2-1.jpg",
+    img:"https://www.arweave.net/EXUJt80FIogASexqNQojt5gNCW243w5m_u782ZlIXck?ext=png",
     title:"Art #40560",
     price:0.5,
     bid:0.5,
@@ -164,9 +164,6 @@ export const NFTPROFILE=[
     ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
     ProfileId:3,
     type:"Music"
-    
-
-
   },
   {
     id:4,
