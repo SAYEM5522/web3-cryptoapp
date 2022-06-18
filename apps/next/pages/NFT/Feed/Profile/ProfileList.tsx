@@ -80,13 +80,14 @@ const ProfileList = () => {
           if(TypeSelecting===item.ProfileType){
             return(
               <div className={styles.ProfileFeed} key={index} onClick={GotoProfile}>
-               <div className={styles.Profile_Cover} >
+               <div className={styles.Profile_Cover}  >
                <Image
               src={item.ProfileCoverPhoto}
               width={310}
               height={200}
               objectFit="cover"
               className='Nft_Profile_Image'
+              quality={100}
               />
                </div>
                <div className={styles.Profile_Avatar}>
@@ -97,9 +98,10 @@ const ProfileList = () => {
               className='NFT_AVATAR'
               />
               </div>
+              <div className={styles.Profile_Des_List}>
               <p className={styles.ProfileName}>{item.ProfileName}</p>
               <p className={styles.ProfileDes}>{item.ProfileDes}</p>
-
+              </div>
                
               </div>
             )
