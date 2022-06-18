@@ -6,7 +6,8 @@
 
 }
 .Nft_Image{
-  border-radius: 13px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
 }
 .Nft_Profile_Image{
  border-top-left-radius: 10px;

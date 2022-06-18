@@ -54,12 +54,13 @@
   font-size: 17px;
   font-weight: 800;
   margin-top: -2px;
+  padding: 3px 10px;
 }
 .Explore_Details{
-  /* width: 210px; */
-  /* border: 1px solid #262C3A; */
-  padding: 10px;
   border-radius: 10px;
+  background-color:#262C3A ;
+  width: 235px;
+  height: 380px;
   
 }
 .Explore_Details_Price{
@@ -140,6 +141,7 @@
   flex-direction: row;
   align-items: center;
   margin-top: 0px;
+  padding: 2px 10px;
 }
 
 

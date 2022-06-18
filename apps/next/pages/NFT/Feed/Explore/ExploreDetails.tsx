@@ -26,8 +26,8 @@ const ExploreDetails = ({item}:Props) => {
     <div onClick={onClick} className={styles.Explore_Details} >
        <Image
               src={item.img}
-              width={210}
-              height={260}
+              width={235}
+              height={250}
               objectFit="cover"
               className='Nft_Image'
               />
