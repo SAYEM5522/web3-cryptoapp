@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectGainerIndex, selectTokenId, setAnalytics2, setCurrentPrice, setMarket, setTokenId, setTokenIndex, setTokenName } from '../features/Analytics'
 import styles from "../Css/CryptoFeed/AllAssets.module.css"
 interface Props {
-  data : any
+  data ?: any
 }
 const AllAssets = ({data}:Props) => {
   const dispatch=useDispatch();

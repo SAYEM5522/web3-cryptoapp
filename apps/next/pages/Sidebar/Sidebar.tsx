@@ -41,13 +41,19 @@ const Icon=[
   {
     id:5,
     icon:FaBuffer,
-    name:"Pool",
+    name:"DEX",
     
   },
   {
     id:6,
     icon:BiTrendingUp,
     name:"Gainer",
+    
+  },
+  {
+    id:7,
+    icon:BiTrendingUp,
+    name:" Nft Generate",
     
   }
 ]
@@ -83,7 +89,7 @@ const Sidebar = () => {
         {
           Icon.map((item,index)=>{
 
-            const DifferentRoute=useCallback((name,index)=>{
+            const DifferentRoute=(name:any,index:number)=>{
               dispatch(setSidebarIndex({
                 sidebarIndex:index
               }))
@@ -97,7 +103,7 @@ const Sidebar = () => {
                   })
                 }
               
-            },[index])
+            }
             
               return(
                 <div key={index} style={{

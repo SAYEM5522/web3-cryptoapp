@@ -1,7 +1,6 @@
 .Home_container{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-top: -9px;
   background-color: #1C1E2A;
+  height: 100vh;
 }
