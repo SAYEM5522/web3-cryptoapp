@@ -13,17 +13,42 @@ import {
     Tooltip,
     Legend
   );
+  const dataSelect=[
+    {
+      id:1,
+      type:'7D',
+      value:7
+    },
+    {
+      id:2,
+      type:'1M',
+      value:30
+    },
+    {
+      id:3,
+      type:'6M',
+      value:186
+    },
+    {
+      id:4,
+      type:'1Y',
+      value:365
+    },
+  
+  ]
 const DexGraph = () => {
   const [Data,setData]=useState<any>([])
+  const [SelectDate,setSelectDate]=useState<number>(7)
+  const [currentIndex,setCurrentIndex]=useState<number>(0)
   const getData=async()=>{
-    await axios.get("https://api.coingecko.com/api/v3/exchanges/uniswap/volume_chart?days=30").then((res)=>{
+    await axios.get(`https://api.coingecko.com/api/v3/exchanges/uniswap/volume_chart?days=${SelectDate}`).then((res)=>{
        setData(res.data)
     }).catch((err)=>{console.log(err)})
 }
 useEffect(()=>{
-  getData()
-  // ()=>getData()
-},[])
+  getData(),
+  ()=>getData()
+},[SelectDate])
 const value=Data.map((item:any)=>item[1])
 const labels=Data.map((item:any)=>item[0])
 console.log(labels)
@@ -58,8 +83,24 @@ const options = {
     }
 }
 };
+
   return (
     <div className={styles.DexGraph}>
+       <div className={styles.CryptoGraph_Header}>
+      {
+        dataSelect.map((value,index)=>{
+          const Select=()=>{
+            setSelectDate(value.value),
+            setCurrentIndex(index)
+          }
+          return(
+            <div onClick={Select} className={styles.CryptoGraph_List} key={index}>
+              <p style={{"color":(currentIndex===index)?"blue":"white"}}>{value.type}</p>
+            </div>
+          )
+        })
+      }
+      </div>
     <Line options={options}  data={item} />
     </div>
   )
