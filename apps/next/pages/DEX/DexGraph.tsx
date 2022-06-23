@@ -51,7 +51,6 @@ useEffect(()=>{
 },[SelectDate])
 const value=Data.map((item:any)=>item[1])
 const labels=Data.map((item:any)=>item[0])
-console.log(labels)
 
 const item = {
   labels:labels,
@@ -85,7 +84,12 @@ const options = {
 };
 
   return (
-    <div className={styles.DexGraph}>
+    
+      // <div className={styles.DexGraphH} >
+
+     <div className={styles.DexGraph}>
+      <h3 className={styles.DexCaption}>Market Volume</h3>
+
        <div className={styles.CryptoGraph_Header}>
       {
         dataSelect.map((value,index)=>{
@@ -103,6 +107,8 @@ const options = {
       </div>
     <Line options={options}  data={item} />
     </div>
+    // </div>
+    
   )
 }
 

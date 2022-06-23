@@ -1,3 +1,23 @@
 .DexList{
   flex: 0.82;
+  display: flex;
+  flex-direction: row;
+}
+.DexCaption{
+  margin-left: 30px;
+  font-size: 24px;
+  color: white;
+  font-weight: 900;
+
+}
+.DexItem{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.DexItem::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.DexItem::-webkit-scrollbar-thumb {
+  background: transparent;
 }

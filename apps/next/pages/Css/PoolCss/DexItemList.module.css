@@ -1,0 +1,26 @@
+.DexItemList{
+  flex: 0.20;
+  padding:10px;
+}
+
+.Assests{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  height: 50px;
+  width: 300px;
+  
+}
+.Assests_Des{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.Assests_Des>p{
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}
