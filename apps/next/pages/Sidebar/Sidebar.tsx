@@ -53,7 +53,7 @@ const Icon=[
   {
     id:7,
     icon:BiTrendingUp,
-    name:" Nft Generate",
+    name:"GenerateNFT",
     
   }
 ]

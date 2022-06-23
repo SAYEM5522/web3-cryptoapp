@@ -135,7 +135,8 @@ export const NFTPROFILE=[
     profileName:"Richard Doe",
     ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
     ProfileId:1,
-    type:"Trending"
+    type:"Trending",
+    like:10
   },
   {
     id:2,
@@ -147,7 +148,9 @@ export const NFTPROFILE=[
     profileName:"Richard Doe",
     ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
     ProfileId:2,
-    type:"Art"
+    type:"Art",
+    like:10
+
 
 
 
@@ -163,7 +166,9 @@ export const NFTPROFILE=[
     profileName:"Richard Doe",
     ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
     ProfileId:3,
-    type:"Music"
+    type:"Music",
+    like:34
+
   },
   {
     id:4,
@@ -175,7 +180,9 @@ export const NFTPROFILE=[
     profileName:"Richard Doe",
     ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
     ProfileId:4,
-    type:"Top"
+    type:"Top",
+    like:5
+
 
 
 
@@ -190,7 +197,9 @@ export const NFTPROFILE=[
     profileName:"Richard Doe",
     ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
     ProfileId:5,
-    type:"New"
+    type:"New",
+    like:45
+
 
 
 
@@ -205,7 +214,9 @@ export const NFTPROFILE=[
     profileName:"Richard Doe",
     ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
     ProfileId:6,
-    type:"New"
+    type:"New",
+    like:20
+
 
 
   },
@@ -219,7 +230,9 @@ export const NFTPROFILE=[
     profileName:"Richard Doe",
     ethLogo:"https://flyclipart.com/thumb2/eth-ether-ethereum-icon-with-png-and-vector-format-for-free-738452.png",
     ProfileId:5,
-    type:"Top"
+    type:"Top",
+    like:29
+
 
 
   },
