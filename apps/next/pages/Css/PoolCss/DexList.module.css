@@ -21,3 +21,14 @@
 .DexItem::-webkit-scrollbar-thumb {
   background: transparent;
 }
+.DexItemFeed{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.DexItemFeed::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.DexItemFeed::-webkit-scrollbar-thumb {
+  background: transparent;
+}

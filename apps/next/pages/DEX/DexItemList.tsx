@@ -1,12 +1,16 @@
 import axios from 'axios'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styles from "../Css/PoolCss/DexItemList.module.css"
+import { selectDexList, setCoinId, setDexList } from '../features/DexFeatures'
 const DexItemList = () => {
-  const [data,setData]=useState([])
+  const [currentIndex,setCurrentIndex]=useState(0)
+  const dispatch=useDispatch()
+  const DexList=useSelector(selectDexList)
   const getData=async()=>{
     await axios.get("https://api.coingecko.com/api/v3/exchanges?page=1").then((res)=>{
-     setData(res.data)
+     dispatch(setDexList(res.data))
     }).catch((err)=>{
       console.log(err)
     })
@@ -15,17 +19,23 @@ const DexItemList = () => {
     getData(),
     ()=>getData()
   },[])
+  console.log(DexList)
   return (
     <div className={styles.DexItemList} style={{width:"200px",position:"relative"}} >
       
       {
-        data.map((item:any,index)=>{
+        DexList[0]?.map((item:any,index:number)=>{
+          const ListItem=()=>{
+            setCurrentIndex(index)
+            dispatch(setCoinId({
+              CoinId:item.id
+            }))
+          }
           return(
-          //  <div style={{width:"200px",position:"relative"}} >
-            <div key={index} className={styles.Assests} >
+            <div key={index} className={styles.Assests} onClick={ListItem} style={{backgroundColor:index===currentIndex?"#262C3A":"transparent"}} >
               <div>
             <Image
-               src={item.image}
+               src={item?.image}
                 width={35}
                 height={35}
                 alt={item.name}
@@ -39,7 +49,6 @@ const DexItemList = () => {
                <p>{item.name}</p>
                </div>
           </div>
-          // </div>
           )
         })
       }

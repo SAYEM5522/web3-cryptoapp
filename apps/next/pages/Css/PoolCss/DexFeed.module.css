@@ -1,0 +1,63 @@
+.DexFeed{
+  width: 95.5%;
+  border: 1px solid #262C3A;
+  margin-left: 30px;
+  margin-top: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.DexFeed_Header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 20px;
+}
+.DexFeed_List{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  border-top: 1px solid #262C3A;
+  transition: transform 0.4s;
+  cursor: pointer;
+
+}
+.DexFeed_List:hover{
+  background-color: #262C3A;
+    border-radius: 6px;
+    transform: scale(1.005);
+}
+.DexFeed_Header>p{
+  font-size: 16px;
+  font-weight: 800;
+  color: white;
+}
+.DexFeed_List_DES{
+ display: flex;
+ align-items: center;
+ flex-direction: row;
+ width: 150px;
+}
+.DexFeed_List_Id{
+  color: white;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 800;
+}
+.DexFeed_List_Rank{
+  margin-left: 34px;
+  color: white;
+  font-size: 17px;
+}
+.DexFeed_List_Score{
+  margin-right: 45px;
+  color: white;
+  font-size: 17px;
+}
+.DexFeed_List_Volume{
+  margin-right: 45px;
+  color: white;
+  font-size: 17px;
+}

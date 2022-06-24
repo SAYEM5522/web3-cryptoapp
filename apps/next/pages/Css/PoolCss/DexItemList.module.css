@@ -10,8 +10,9 @@
   padding: 5px 20px;
   margin-top: 10px;
   cursor: pointer;
-  height: 50px;
+  height: 45px;
   width: 300px;
+  border-radius: 30px;
   
 }
 .Assests_Des{
