@@ -1,0 +1,20 @@
+.DexDetails{
+  background-color: #1C1E2A;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  
+}
+.DexDetails_Feed{
+  flex: 0.82;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.DexDetails_Feed::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.DexDetails_Feed::-webkit-scrollbar-thumb {
+  background: transparent;
+}

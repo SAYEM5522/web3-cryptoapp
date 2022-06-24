@@ -1,10 +1,12 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styles from "../Css/PoolCss/DexFeed.module.css"
 import { selectDexList } from '../features/DexFeatures'
 const DexFeed = () => {
   const DexList=useSelector(selectDexList)
+  const router=useRouter()
   
   return (
     <div className={styles.DexFeed}>
@@ -17,8 +19,11 @@ const DexFeed = () => {
       </div>
       {
         DexList[0]?.map((item:any,index:number)=>{
+          const GoToDetails=()=>{
+            router.push("/DEX/DexDetaild")
+          }
           return(
-            <div className={styles.DexFeed_List} >
+            <div className={styles.DexFeed_List} onClick={GoToDetails} >
               <p className={styles.DexFeed_List_Rank}>{item.trust_score_rank}</p>
               <div className={styles.DexFeed_List_DES}>
               <Image
