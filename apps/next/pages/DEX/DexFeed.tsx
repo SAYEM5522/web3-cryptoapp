@@ -20,7 +20,7 @@ const DexFeed = () => {
       {
         DexList[0]?.map((item:any,index:number)=>{
           const GoToDetails=()=>{
-            router.push("/DEX/DexDetaild")
+            router.push(`/DEX/DexDetaild?id=${item.id}`)
           }
           return(
             <div className={styles.DexFeed_List} onClick={GoToDetails} >
