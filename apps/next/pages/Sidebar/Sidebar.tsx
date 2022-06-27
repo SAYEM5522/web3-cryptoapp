@@ -63,8 +63,6 @@ const Sidebar = () => {
       const dispatch=useDispatch()
       const [cureentIndex,setCurrentIndex]=useState(0);
       const sidebarIndex=useSelector(selectsidebarindex)
-    
-     
   return (
     <div className={styles.Sidebar} 
  
