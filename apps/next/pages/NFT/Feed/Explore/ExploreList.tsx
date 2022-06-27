@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useCallback } from 'react'
 import {BsArrowRight} from 'react-icons/bs'
-import { useDispatch } from 'react-redux';
-import { setExploreList } from '../../../features/Nftfeatures';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectNftSearch, setExploreList } from '../../../features/Nftfeatures';
 import styles from "../../NftCss/Feed/Explore/ExploreList.module.css"
 import ExploreDetails from './ExploreDetails';
 interface IProps {
@@ -13,6 +13,7 @@ interface IProps {
 const ExploreList = ({title,data}:IProps) => {
   const router=useRouter();
   const dispatch=useDispatch()
+  const search=useSelector(selectNftSearch)
   const OnClick=useCallback(()=>{
        router.push(`/NFT/Feed/Explore/${title}?pid=${title}`)
        dispatch(setExploreList({
@@ -33,8 +34,19 @@ const ExploreList = ({title,data}:IProps) => {
       <div className={styles.ExploreList_Item_List}>
       {
 
-        data.map((item:any,index:number)=>{
+        data.filter((value:any,index:number)=>{
          
+          if(search==="")
+          {
+            return value
+          }
+          else if(value.title.toLowerCase().includes(search.toLowerCase())||
+          value.type.toLowerCase().includes(search.toLowerCase()))
+          {
+            return value
+          }
+
+        }).map((item:any,index:number)=>{
           {
             if(title===item.type){
               return(
@@ -44,7 +56,22 @@ const ExploreList = ({title,data}:IProps) => {
             )
             }
           }
-         })
+        })
+
+
+
+        // data.map((item:any,index:number)=>{
+         
+        //   {
+        //     if(title===item.type){
+        //       return(
+        //         <div className={styles.ExploreList_Item} key={index}>
+        //         <ExploreDetails item={item}   />
+        //       </div>
+        //     )
+        //     }
+        //   }
+        //  })
       }
       </div>
     </div>

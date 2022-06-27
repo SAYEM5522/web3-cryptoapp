@@ -81,3 +81,18 @@
   align-items: center;
   justify-content: space-between;
 }
+.NftFeed_Part{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  position: sticky;
+  top: -10px;
+  z-index: 1000;
+}
+.NftFeed_Search{
+  margin-left: 15px;
+  display: flex;
+  position: relative;
+
+}

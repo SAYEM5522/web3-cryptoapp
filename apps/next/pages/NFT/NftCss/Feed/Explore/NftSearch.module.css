@@ -1,0 +1,33 @@
+.Search{
+  width: 220px!important;
+  height: 35px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+
+.Input{
+  width: 220px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  background-color: #262C3A;
+  color: white;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  display: flex;
+}
+.Input::placeholder{
+  color: white;
+}
+.Icon{
+  position: absolute;
+  right: 0px;
+  color: white;
+  top: 4px;
+  cursor: pointer;
+  
+}

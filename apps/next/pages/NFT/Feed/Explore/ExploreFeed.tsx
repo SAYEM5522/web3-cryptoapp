@@ -4,6 +4,7 @@ import ExploreList from './ExploreList'
 import styles from "../../NftCss/Feed/Explore/ExploreFeed.module.css"
 import { NFTPROFILE } from '../../../Data'
 import { NftCollection } from '../../../Data'
+import Nftsearch from './Nftsearch'
 const NftItem=[
   {
     id:1,
@@ -36,7 +37,12 @@ const NftItem=[
 const ExploreFeed = () => {
   return (
     <div style={{flex:0.82}} className={styles.ExploreFeed}>
+      <div className={styles.SearchList}>
       <NftHeader/>
+      <div style={{marginTop:"15px"}}>
+      <Nftsearch/>
+      </div>
+      </div>
      {
         NftItem.map((item,index)=>{
             return(
