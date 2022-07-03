@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react'
 import styles from "../Css/SwapCss/SwapMiddle.module.css"
 import {FiSettings} from "react-icons/fi"
 import { WalletConnect } from '../WalletConnect/WalletConnect'
+import SwapList from "./SwapList"
 const SwapMiddle = () => {
   const [Amount1,setAmount1]=useState(0)
   const [Amount2,setAmount2]=useState(0)
@@ -50,7 +51,11 @@ const SwapMiddle = () => {
           <div className={styles.TokenListHeader}>
            <p>Select Token</p>
             <p onClick={()=>{setOpen1(false)}}>X</p>
+            
           </div>
+          <div className={styles.SwapList} >
+               <SwapList/>
+           </div>
         </div>
         :null
       }
