@@ -9,7 +9,7 @@ const SwapList = () => {
   ]
   const getData=async()=>{
      UrlList.map((url)=>{
-      axios.get(url).then((res)=>{
+     await axios.get(url).then((res)=>{
         setTokenList([...TokenList,res.data.tokens])
       }).catch((err)=>{
         console.log(err)

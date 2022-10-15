@@ -8,7 +8,7 @@ export const NFTPROFILE=[
     ProfileItems:100,
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
-    ProfileTime:"06-06-2022",
+    ProfileTime:"20-06-2022",
     ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
     ProfileDes:"A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. What's more, each Moonbird unlocks private club membership and additional benefits the longer you hold them. We call it nesting – because, obviously.",
     ProfileType:"Trending"
@@ -97,7 +97,7 @@ export const NFTPROFILE=[
     ProfileItems:100,
     ProfileToken:"ETH",
     ProfileCatagory:"Crypto",
-    ProfileTime:"06-06-2022",
+    ProfileTime:"06-08-2022",
     ProfileCoverPhoto:"https://img.rarible.com/prod/image/upload/t_image_big/prod-itemImages/0x6728d91abacdbac2f326baa384513a523c21b80a:6345/3950deee",
     ProfileDes:"",
     ProfileType:"News"

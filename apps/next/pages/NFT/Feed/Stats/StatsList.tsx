@@ -17,7 +17,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'06-06-2022',
+    time:'06-08-2022',
     ProfileId:1,
    
   },
@@ -31,7 +31,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'06-06-2022',
+    time:'08-07-2022',
     ProfileId:2,
   },
   {
@@ -44,7 +44,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'06-03-2022',
+    time:'07-08-2022',
     ProfileId:3,
   },
   {
@@ -57,7 +57,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'05-06-2022',
+    time:'09-08-2022',
     ProfileId:4,
   },
   {
@@ -70,7 +70,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'06-08-2022',
+    time:'09-09-2022',
     ProfileId:5,
   },
   {
@@ -83,7 +83,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'05-20-2022',
+    time:'09-20-2022',
     ProfileId:6,
   }, {
     id:7,
@@ -95,7 +95,7 @@ const StatsItem=[
     token:'ETH',
     token_logo:'',
     catagory:'Crypto',
-    time:'06-05-2022',
+    time:'07-05-2022',
     ProfileId:7,
   },
   
