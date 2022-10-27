@@ -15,7 +15,6 @@ const CryptoStats = () => {
   const price_1h=useSelector(selectPriceChangePercentage1hInCurrency)
   const price_24h=useSelector(selectPriceChangePercentage24hInCurrency)
   const price_7d=useSelector(selectPriceChangePercentage7dInCurrency)
-  console.log(useColor(price_1h))
 const analyticsData=useSelector(selectAnalytics)
   return (
     <>
